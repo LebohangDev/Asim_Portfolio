@@ -1,0 +1,230 @@
+.navContainer {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.navContainer nav {
+    background-color: #131313;
+    border-radius: 50px;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navContainer nav ul {
+    list-style: none;
+    padding-left: 1rem;
+    padding-right: 4rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+
+}
+
+.navContainer nav ul li {
+
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    padding: 0.8rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+
+
+}
+
+.navContainer nav ul li a {
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: var(--text-primary);
+}
+
+
+.navContainer nav ul li i {
+    font-size: 1.4rem;
+}
+
+.navContainer nav ul h2 {
+    color: var(--text-primary);
+    font-weight: 200;
+    padding-left: 1rem;
+}
+
+
+.navContainer nav ul li.active {
+    background-color: #303030;
+    border-radius: 58px;
+    padding: 0.8rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    transition: all 0.3s ease-in-out;
+
+}
+
+
+.hamburgerContainer {
+    display: none;
+}
+
+
+
+
+
+@media (max-width: 767px) {
+    .navContainer {
+        display: none;
+    }
+
+    .hamburgerContainer {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        max-width: 600px;
+
+        padding: 1rem;
+    }
+
+    .hamHeader {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+
+
+    .hamburgerIcon {
+        width: 35px;
+        height: 35px;
+        cursor: pointer;
+        filter: invert(1);
+    }
+
+    .hamHeader h2 {
+        color: var(--text-primary);
+        font-weight: 200;
+        margin: 0;
+        font-size: 3.5rem;
+    }
+
+    .hamMenu {
+        display: none;
+    }
+
+    .hamMenuActive {
+        display: grid;
+        grid-template-columns: minmax(100%, 1fr);
+        grid-template-rows: 2rem 1fr 1fr 1fr;
+        padding: 2rem;
+        gap: 4rem;
+        background-color: #1B1B1B;
+        width: 90%;
+        max-width: 600px;
+        height: 100vh;
+        margin: 0 auto;
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 1;
+    }
+
+
+    .hamMenuActive .close {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+
+
+
+    }
+
+
+    .hamMenuActive .close img {
+        width: 35px;
+        height: 35px;
+        cursor: pointer;
+
+
+    }
+
+
+    .hamMenuActive ul {
+        list-style: none;
+        padding-left: 1rem;
+        padding-right: 4rem;
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+
+    }
+
+
+    .hamMenuActive ul li {
+        color: white;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 0.2rem;
+
+    }
+
+    .hamMenuActive ul li a {
+        text-decoration: none;
+        font-size: 2rem;
+        color: var(--text-primary);
+    }
+
+    .hamMenuActive ul li i {
+        font-size: 2rem;
+    }
+
+    .hamMenuActive .media {
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .hamMenuActive .media h1 {
+        color: var(--text-primary);
+        font-weight: 200;
+        margin: 0;
+        font-size: 3rem;
+    }
+
+    .hamMenuActive .media .socials {
+        display: flex;
+        gap: 0.2rem;
+        justify-items: center;
+
+    }
+
+    .hamMenuActive .media .socials i {
+        font-size: 1.7rem;
+    }
+
+    .hamMenuActive .copyright {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hamMenuActive .copyright p {
+        color: var(--text-primary);
+        font-weight: 200;
+        margin: 0;
+        font-size: 1rem;
+    }
+}

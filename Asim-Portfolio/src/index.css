@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+  font-size: 90%;
+  font-family: 'Lato', sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  overflow: hidden;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+
+
+  --bg-primary: black;
+  --bg-secondary: #1E1E1E;
+  --bg-tertiary: #FFB71B;
+  --bg-quaternary: #CE8D00;
+
+  --text-primary: white;
+  --text-secondary: #C0C0C0;
+  --text-tertiary: #A6A6A6;
+}
+
+h1 {
+  font-family: 'Lato', sans-serif;
+}
+
+h2 {
+  font-family: 'Alex Brush', cursive;
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
+}
+
+
+.app {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 8rem 1fr 1fr;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  width: 100vw;
+  height: 100vh;
+
+  margin: 0 auto;
+}
+
+.app .header {
+  grid-column: 1 / -1;
+}
+
+.app .main {
+  grid-column: 1 / -1;
+}
+
+.app .footer {
+  grid-column: 1 / -1;
+}
+
+
+
+
+
+@media (max-width: 767px) {
+
+  :root {
+    font-size: 80%;
+  }
+
+  .app {
+    grid-template-columns: minmax(100%, 1fr);
+    max-width: 100%;
+
+
+  }
+
+}

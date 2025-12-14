@@ -1,0 +1,509 @@
+/* Home styles */
+
+.homeContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 40rem;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.homeContent1 {
+    grid-column: 1 / 1;
+    display: grid;
+    grid-template-columns: minmax(100%, 1fr);
+    grid-template-rows: 20rem 10rem 5rem auto;
+}
+
+.homeContent1 .helloTitle {
+    line-height: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    pointer-events: none;
+
+}
+
+
+.homeContent1 .helloTitle p {
+    font-size: 1.2rem;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    margin: 0;
+
+    color: var(--text-secondary);
+}
+
+
+.homeContent1 .helloTitle .name {
+    line-height: 8rem;
+    position: relative;
+}
+
+
+.homeContent1 .helloTitle .name h1 {
+    font-size: 10rem;
+    font-weight: 900;
+    margin: 0.4rem;
+    width: fit-content;
+    text-shadow: 40px 30px 3px rgba(255, 255, 255, 0.1);
+}
+
+
+
+.homeContent1 .helloTitle .name h1:nth-child(2) {
+    padding-left: 7.5rem;
+}
+
+
+.homeContent1 .helloTitle .name hr:nth-child(3) {
+    width: 0.8rem;
+    height: 8rem;
+
+    background-color: var(--text-primary);
+    position: absolute;
+    top: 9rem;
+    left: 3.5rem;
+    border: none;
+    border-radius: 10rem;
+}
+
+
+.homeContent1 .helloTitle .name hr:nth-child(4) {
+    width: 11rem;
+    height: 0.8rem;
+
+    background-color: var(--text-primary);
+    position: absolute;
+    top: 4rem;
+    left: 27rem;
+    border: none;
+    border-radius: 10rem;
+}
+
+
+.homeContent1 .description p {
+    font-size: 1.1rem;
+
+    font-weight: 200;
+    margin: 0;
+    line-height: 2rem;
+
+    color: var(--text-secondary);
+}
+
+
+.homeContent1 .description p span {
+    background: linear-gradient(to right, #FFFFFF, #CCCCCC);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+
+.homeContent1 .signature h2 {
+    font-size: 4rem;
+
+    font-weight: 400;
+    margin: 0;
+    color: var(--text-primary);
+}
+
+
+.homeContent1 .socialsContainer {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+
+}
+
+.homeContent1 .socialsContainer a {
+
+    font-size: 2rem;
+    color: var(--text-primary);
+    transition: color 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.homeContent1 .socialsContainer a:hover {
+    color: var(--bg-tertiary);
+}
+
+.homeContent2 {
+    grid-column: 2 / 2;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+
+}
+
+
+.homeContent2 .imageContainer {
+    position: relative;
+    width: 100%;
+    max-width: 30rem;
+    /* Adjust this to easily change size */
+    height: auto;
+}
+
+
+
+.homeContent2 .imageContainer img {
+    width: 30rem;
+    height: 50rem;
+
+    position: absolute;
+    top: -18rem;
+    /* Consider using percentage or media queries for better responsiveness */
+    left: -18%;
+    z-index: 1;
+}
+
+
+.homeContent2 .keywordsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 5rem;
+    line-height: 0;
+
+    z-index: 2;
+}
+
+.homeContent2 .keywordsContainer img {
+    width: 10rem;
+    height: 3.5rem;
+
+
+}
+
+
+
+.homeContent2 .keywordsContainer .itemContainer .item {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    white-space: nowrap;
+    gap: 0.2rem;
+}
+
+.homeContent2 .keywordsContainer .itemContainer .item p {
+    font-size: 1rem;
+    font-weight: 400;
+
+    color: #A6A6A6;
+}
+
+.homeContent2 .keywordsContainer .itemContainer .item hr {
+    height: 0.1rem;
+    width: 3rem;
+    background-color: #A6A6A6;
+    border: none;
+    border-radius: 10rem;
+    margin-left: 1rem;
+}
+
+.homeContent2 .keywordsContainer .itemContainer .item:nth-child(3) hr {
+    width: 2rem;
+    margin-left: 2rem;
+}
+
+.homeContent2 .keywordsContainer .itemContainer .item:nth-child(4) hr {
+    width: 2rem;
+    margin-left: 2rem;
+}
+
+
+
+
+
+/* Item Container Wrapper */
+
+@media (max-width: 767px) {
+    .homeContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 90%;
+        padding: 4rem 1rem;
+        height: auto;
+    }
+
+    /* Flatten structure to allow reordering mixed elements */
+    .homeContent1,
+    .homeContent2,
+    .homeContent2 .keywordsContainer {
+        display: contents;
+    }
+
+
+    .homeContent1 .helloTitle {
+        order: 1;
+
+        margin-bottom: 2rem;
+        pointer-events: auto;
+    }
+
+    .homeContent1 .helloTitle .name h1 {
+        font-size: 7rem;
+
+    }
+
+    .homeContent1 .helloTitle .name h1:nth-child(2) {
+        padding-left: 5.2rem;
+    }
+
+
+    .homeContent1 .helloTitle .name hr:nth-child(3) {
+        left: 3rem;
+        height: 6rem;
+
+    }
+
+
+    .homeContent1 .helloTitle .name hr:nth-child(4) {
+        left: 19rem;
+        width: 8rem;
+
+    }
+
+    .homeContent2 .keywordsContainer img {
+        order: 2;
+        margin-bottom: 2rem;
+        width: 15rem;
+
+
+    }
+
+
+
+
+
+    .homeContent1 .description {
+        order: 3;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .homeContent1 .signature {
+        display: none;
+    }
+
+
+    .homeContent1 .socialsContainer {
+        order: 4;
+        justify-content: center;
+        margin-bottom: 1rem;
+
+    }
+
+
+
+    /* Restore Keywords Flex/Contents to handle reordering mixed children (Logo vs Group) */
+    .homeContent2 .keywordsContainer {
+        display: contents;
+    }
+
+    .homeContent2 .keywordsContainer img {
+        order: 2;
+        margin-bottom: 2rem;
+        width: 15rem;
+    }
+
+    /* Rotate the entire container of items for mobile */
+    .homeContent2 .keywordsContainer .itemContainer {
+        order: 5;
+        display: flex;
+        flex-direction: column;
+        /* Stacked vertically in local space */
+        /* Rotate -90deg -> Becomes Horizontal sequence of vertical items */
+        transform: rotate(-90deg);
+        transform-origin: center;
+        margin-top: 5rem;
+        margin-bottom: 2rem;
+        gap: 1.5rem;
+    }
+
+    .homeContent2 .keywordsContainer .item {
+        transform: none;
+        /* No individual rotation */
+        margin: 0;
+        white-space: nowrap;
+    }
+
+
+
+
+
+
+    .homeContent2 .imageContainer {
+        order: 6;
+        width: 100%;
+        max-width: 80%;
+        margin-top: 2rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    .homeContent2 .imageContainer img {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        transform: none;
+    }
+
+
+}
+
+
+
+/* Portrait Mode: Mobile to iPad Pro Portrait */
+@media (min-width: 768px) and (max-width: 1280px) and (orientation: portrait) {
+    .homeContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 90%;
+        padding: 4rem 1rem;
+        height: auto;
+    }
+
+    /* Flatten structure to allow reordering mixed elements */
+    .homeContent1,
+    .homeContent2,
+    .homeContent2 .keywordsContainer {
+        display: contents;
+    }
+
+    /* 1. Title */
+    .homeContent1 .helloTitle {
+        order: 1;
+        align-items: center;
+        margin-bottom: 2rem;
+        pointer-events: auto;
+    }
+
+    .homeContent1 .helloTitle .name h1 {
+        font-size: 6rem;
+        /* Scale down for portrait/mobile */
+    }
+
+    .homeContent1 .helloTitle .name h1:nth-child(2) {
+        padding-left: 0;
+    }
+
+    /* Keep decorative lines */
+    .homeContent1 .helloTitle .name hr:nth-child(3),
+    .homeContent1 .helloTitle .name hr:nth-child(4) {
+        display: block;
+    }
+
+    /* 2. Logo */
+    .homeContent2 .keywordsContainer>img {
+        order: 2;
+        margin-bottom: 2rem;
+        position: static;
+        /* Reset any previous pos */
+    }
+
+    /* 3. Description */
+    .homeContent1 .description {
+        order: 3;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    /* 4. Socials */
+    .homeContent1 .socialsContainer {
+        order: 4;
+        justify-content: center;
+        margin-bottom: 3rem;
+    }
+
+    /* 5. Keywords (Items) */
+    .homeContent2 .keywordsContainer .item {
+        order: 5;
+        width: 100%;
+        justify-content: center;
+        /* Center items */
+        margin-bottom: 0.5rem;
+    }
+
+    /* Revert item lines to standard layout for visibility or keep custom? 
+       User said "vertical where the lines are facing towards the image top" previously, 
+       but currently "horizontal words and line thing". 
+       Let's keep the current horizontal look but centered. */
+
+    /* 6. Image */
+    .homeContent2 .imageContainer {
+        order: 6;
+        width: 100%;
+        max-width: 80%;
+        margin-top: 2rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    .homeContent2 .imageContainer img {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        transform: none;
+    }
+
+    /* Hide signature or place it at bottom? Not specified, defaults to order 0 or last implied? */
+    /* Signatures usually go near description. Let's put it after description. */
+    .homeContent1 .signature {
+        order: 3;
+        /* Group with desc */
+        margin-top: 1rem;
+    }
+}
+
+
+
+@media (min-width: 768px) and (max-width: 1279px) and (orientation: landscape) {
+    .homeContainer {
+        max-width: 95%;
+        grid-template-columns: repeat(2, 1fr);
+        height: 100vh;
+        /* Ensure full viewport */
+        overflow: hidden;
+        /* Prevent scroll on tight fits */
+    }
+
+    .homeContent1 .helloTitle .name h1 {
+        font-size: 6rem;
+        /* Scale down title */
+    }
+
+    .homeContent1 .helloTitle .name h1:nth-child(2) {
+        padding-left: 4rem;
+        /* Reduce offset */
+    }
+
+    .homeContent2 .imageContainer img {
+        width: 25rem;
+        /* Slightly smaller image base size */
+        height: auto;
+        top: -12rem;
+        /* Adjustment for landscape fit */
+        left: -10%;
+    }
+
+    .homeContent2 .keywordsContainer {
+        margin-left: 2rem;
+    }
+}

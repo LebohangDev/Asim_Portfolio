@@ -1,0 +1,11 @@
+.container {
+    background-color: #1E1E1E;
+    width: 100vw;
+    /* Force full viewport width */
+    margin-left: calc(-50vw + 50%);
+    /* Negative margin to pull it to the left edge assuming parent is centered */
+    padding: 2rem;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 100;
+}
