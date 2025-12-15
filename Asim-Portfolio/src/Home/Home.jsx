@@ -43,10 +43,10 @@ const Home = () => {
                 </div>
                 <div className={styles.homeContent2}>
                     <div className={styles.imageContainer}>
-                        <img src="/Images/Asim/Asim_Hero.png" alt="" />
+                        <img src="Images/Asim/Asim_Hero.png" alt="" />
                     </div>
                     <div className={styles.keywordsContainer}>
-                        <img src="/Images/Logos/logo_4.svg" alt="" />
+                        <img src="Images/Logos/logo_4.svg" alt="" />
                         <div className={styles.itemContainer}>
                             <div className={styles.item}>
                                 <hr />
