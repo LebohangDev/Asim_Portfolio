@@ -38,7 +38,7 @@ const Nav = ({ activeNav, setActiveNav }) => {
                 <div className={styles.hamHeader}>
                     <h2>Asim</h2>
                     <img
-                        src="/Images/hamburger.svg"
+                        src="Images/hamburger.svg"
                         alt="Menu"
                         className={styles.hamburgerIcon}
                         onClick={(e) => { e.preventDefault(); setHamMenu(true) }}
@@ -55,7 +55,7 @@ const Nav = ({ activeNav, setActiveNav }) => {
                             transition={{ duration: 0.3, ease: 'easeInOut' }}
                         >
                             <div className={styles.close}>
-                                <img src="/Images/close.svg" alt="Close" className={styles.closeIcon} onClick={(e) => { e.preventDefault(); setHamMenu(false) }} />
+                                <img src="Images/close.svg" alt="Close" className={styles.closeIcon} onClick={(e) => { e.preventDefault(); setHamMenu(false) }} />
                             </div>
 
                             <ul>
