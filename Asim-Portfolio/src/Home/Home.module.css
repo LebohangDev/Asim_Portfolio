@@ -186,6 +186,13 @@
 
 
 
+.homeContent2 .keywordsContainer .itemContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
 .homeContent2 .keywordsContainer .itemContainer .item {
     display: flex;
     flex-direction: row;
@@ -211,29 +218,204 @@
     margin-left: 1rem;
 }
 
+.homeContent2 .keywordsContainer .itemContainer .item:nth-child(2) hr {
+    width: 2rem;
+    margin-left: 2rem;
+}
+
 .homeContent2 .keywordsContainer .itemContainer .item:nth-child(3) hr {
     width: 2rem;
     margin-left: 2rem;
 }
 
-.homeContent2 .keywordsContainer .itemContainer .item:nth-child(4) hr {
-    width: 2rem;
-    margin-left: 2rem;
+
+
+
+
+
+
+
+
+
+@media (max-width: 767px) {
+    .homeContainer {
+        display: grid;
+        grid-template-columns: minmax(100%, 1fr);
+        grid-template-rows: 20rem 4rem auto auto 12rem;
+        align-items: center;
+        justify-items: center;
+        max-width: 90%;
+
+        height: auto;
+    }
+
+    /* Flatten structure to allow reordering mixed elements */
+    .homeContent1,
+    .homeContent2,
+    .homeContent2 .keywordsContainer {
+        display: contents;
+    }
+
+
+    .homeContent1 .helloTitle {
+        order: 1;
+
+        margin-bottom: 2rem;
+        pointer-events: auto;
+    }
+
+    .homeContent1 .helloTitle p {
+        margin-left: 1rem;
+    }
+
+
+    .homeContent1 .helloTitle .name {
+        line-height: 6rem;
+    }
+
+    .homeContent1 .helloTitle .name h1 {
+        font-size: 6.5rem;
+
+    }
+
+
+
+
+    .homeContent1 .helloTitle .name h1:nth-child(2) {
+        padding-left: 5.2rem;
+    }
+
+
+    .homeContent1 .helloTitle .name hr:nth-child(3) {
+        left: 2.5rem;
+        top: 6.5rem;
+        height: 6rem;
+
+    }
+
+
+    .homeContent1 .helloTitle .name hr:nth-child(4) {
+        left: 18rem;
+        top: 2.8rem;
+        width: 8rem;
+
+    }
+
+    .homeContent2 .keywordsContainer img {
+        order: 2;
+        margin-bottom: 2rem;
+        width: 15rem;
+
+
+    }
+
+
+
+
+
+    .homeContent1 .description {
+        order: 3;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .homeContent1 .signature {
+        display: none;
+    }
+
+
+    .homeContent1 .socialsContainer {
+        order: 4;
+        justify-content: center;
+        margin-bottom: 1rem;
+
+    }
+
+
+
+    /* Restore Keywords Flex/Contents to handle reordering mixed children (Logo vs Group) */
+    .homeContent2 .keywordsContainer {
+        display: contents;
+    }
+
+    .homeContent2 .keywordsContainer img {
+        order: 2;
+        margin-bottom: 2rem;
+        width: 15rem;
+    }
+
+    /* Rotate the entire container of items for mobile */
+    .homeContent2 .keywordsContainer .itemContainer {
+        order: 5;
+        display: flex;
+        flex-direction: column;
+        /* Stacked vertically in local space */
+        /* Rotate -90deg -> Becomes Horizontal sequence of vertical items */
+        transform: rotate(-90deg);
+        transform-origin: center;
+        margin-top: 5rem;
+        margin-bottom: 2rem;
+        gap: 1.5rem;
+        align-items: flex-start;
+    }
+
+    .homeContent2 .keywordsContainer .item {
+        transform: none;
+        /* No individual rotation */
+        margin: 0;
+        white-space: nowrap;
+    }
+
+    .homeContent2 .keywordsContainer .itemContainer .item:nth-child(2) hr {
+        width: 4rem;
+        margin-left: 2rem;
+    }
+
+    .homeContent2 .keywordsContainer .itemContainer .item:nth-child(3) hr {
+        width: 4rem;
+        margin-left: 2rem;
+    }
+
+
+
+
+
+
+    .homeContent2 .imageContainer {
+        order: 6;
+        width: 100%;
+        max-width: 80%;
+
+        display: flex;
+        justify-content: center;
+    }
+
+    .homeContent2 .imageContainer img {
+        position: relative;
+        top: 0;
+        left: 0;
+        margin-left: 20%;
+        width: 30rem;
+        height: 50rem;
+        height: auto;
+        transform: none;
+    }
+
+
 }
 
 
 
-
-
-/* Item Container Wrapper */
-
-@media (max-width: 767px) {
+/* Portrait Mode: Mobile to iPad Pro Portrait */
+@media (min-width: 768px) and (max-width: 1280px) and (orientation: portrait) {
     .homeContainer {
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: minmax(100%, 1fr);
+        grid-template-rows: 25rem 4rem auto auto 12rem;
         align-items: center;
+        justify-items: center;
         max-width: 90%;
-        padding: 4rem 1rem;
+
         height: auto;
     }
 
@@ -330,6 +512,7 @@
         margin-top: 5rem;
         margin-bottom: 2rem;
         gap: 1.5rem;
+        align-items: flex-start;
     }
 
     .homeContent2 .keywordsContainer .item {
@@ -339,6 +522,16 @@
         white-space: nowrap;
     }
 
+    .homeContent2 .keywordsContainer .itemContainer .item:nth-child(2) hr {
+        width: 4rem;
+        margin-left: 2rem;
+    }
+
+    .homeContent2 .keywordsContainer .itemContainer .item:nth-child(3) hr {
+        width: 4rem;
+        margin-left: 2rem;
+    }
+
 
 
 
@@ -348,7 +541,7 @@
         order: 6;
         width: 100%;
         max-width: 80%;
-        margin-top: 2rem;
+
         display: flex;
         justify-content: center;
     }
@@ -357,118 +550,11 @@
         position: relative;
         top: 0;
         left: 0;
-        width: 100%;
+        margin-left: 10%;
+        width: 30rem;
+        height: 50rem;
         height: auto;
         transform: none;
-    }
-
-
-}
-
-
-
-/* Portrait Mode: Mobile to iPad Pro Portrait */
-@media (min-width: 768px) and (max-width: 1280px) and (orientation: portrait) {
-    .homeContainer {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        max-width: 90%;
-        padding: 4rem 1rem;
-        height: auto;
-    }
-
-    /* Flatten structure to allow reordering mixed elements */
-    .homeContent1,
-    .homeContent2,
-    .homeContent2 .keywordsContainer {
-        display: contents;
-    }
-
-    /* 1. Title */
-    .homeContent1 .helloTitle {
-        order: 1;
-        align-items: center;
-        margin-bottom: 2rem;
-        pointer-events: auto;
-    }
-
-    .homeContent1 .helloTitle .name h1 {
-        font-size: 6rem;
-        /* Scale down for portrait/mobile */
-    }
-
-    .homeContent1 .helloTitle .name h1:nth-child(2) {
-        padding-left: 0;
-    }
-
-    /* Keep decorative lines */
-    .homeContent1 .helloTitle .name hr:nth-child(3),
-    .homeContent1 .helloTitle .name hr:nth-child(4) {
-        display: block;
-    }
-
-    /* 2. Logo */
-    .homeContent2 .keywordsContainer>img {
-        order: 2;
-        margin-bottom: 2rem;
-        position: static;
-        /* Reset any previous pos */
-    }
-
-    /* 3. Description */
-    .homeContent1 .description {
-        order: 3;
-        text-align: center;
-        margin-bottom: 2rem;
-    }
-
-    /* 4. Socials */
-    .homeContent1 .socialsContainer {
-        order: 4;
-        justify-content: center;
-        margin-bottom: 3rem;
-    }
-
-    /* 5. Keywords (Items) */
-    .homeContent2 .keywordsContainer .item {
-        order: 5;
-        width: 100%;
-        justify-content: center;
-        /* Center items */
-        margin-bottom: 0.5rem;
-    }
-
-    /* Revert item lines to standard layout for visibility or keep custom? 
-       User said "vertical where the lines are facing towards the image top" previously, 
-       but currently "horizontal words and line thing". 
-       Let's keep the current horizontal look but centered. */
-
-    /* 6. Image */
-    .homeContent2 .imageContainer {
-        order: 6;
-        width: 100%;
-        max-width: 80%;
-        margin-top: 2rem;
-        display: flex;
-        justify-content: center;
-    }
-
-    .homeContent2 .imageContainer img {
-        position: relative;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: auto;
-        transform: none;
-    }
-
-    /* Hide signature or place it at bottom? Not specified, defaults to order 0 or last implied? */
-    /* Signatures usually go near description. Let's put it after description. */
-    .homeContent1 .signature {
-        order: 3;
-        /* Group with desc */
-        margin-top: 1rem;
     }
 }
 
@@ -478,10 +564,20 @@
     .homeContainer {
         max-width: 95%;
         grid-template-columns: repeat(2, 1fr);
-        height: 100vh;
+        grid-template-rows: 1fr;
+
         /* Ensure full viewport */
         overflow: hidden;
         /* Prevent scroll on tight fits */
+    }
+
+    .homeContent1 {
+
+        grid-template-rows: 15rem 12rem auto;
+    }
+
+    .homeContent1 .helloTitle .name {
+        line-height: 4.5rem;
     }
 
     .homeContent1 .helloTitle .name h1 {
@@ -489,21 +585,57 @@
         /* Scale down title */
     }
 
+
+    .homeContent1 .description p {
+        font-size: 1rem;
+    }
+
+    .homeContent1 .signature h2 {
+        font-size: 3rem;
+    }
+
+
+    .homeContent1 .socialsContainer {
+        padding-bottom: 4rem;
+    }
+
+
+
+    .homeContent1 .socialsContainer i {
+        font-size: 1.5rem;
+    }
+
     .homeContent1 .helloTitle .name h1:nth-child(2) {
-        padding-left: 4rem;
+        padding-left: 4.5rem;
         /* Reduce offset */
     }
 
+    .homeContent1 .helloTitle .name hr:nth-child(3) {
+        left: 2.5rem;
+        top: 5rem;
+        height: 5rem;
+
+    }
+
+
+    .homeContent1 .helloTitle .name hr:nth-child(4) {
+        left: 17rem;
+        top: 2rem;
+        width: 6rem;
+
+    }
+
     .homeContent2 .imageContainer img {
-        width: 25rem;
+        width: 30rem;
         /* Slightly smaller image base size */
-        height: auto;
-        top: -12rem;
+        height: 50rem;
+        top: -16rem;
+        object-fit: cover;
         /* Adjustment for landscape fit */
-        left: -10%;
+        left: -29%;
     }
 
     .homeContent2 .keywordsContainer {
-        margin-left: 2rem;
+        margin-left: 4rem;
     }
 }
