@@ -1,11 +1,142 @@
-.container {
+.impactContainer {
     background-color: #1E1E1E;
-    width: 100vw;
-    /* Force full viewport width */
-    margin-left: calc(-50vw + 50%);
-    /* Negative margin to pull it to the left edge assuming parent is centered */
-    padding: 2rem;
-    box-sizing: border-box;
+    z-index: 2;
+    width: 100%;
     position: relative;
-    z-index: 100;
+    padding-top: 5rem;
+
+
+}
+
+.impactContent {
+    display: grid;
+    grid-template-columns: minmax(100%, 1fr);
+    grid-template-rows: 1fr;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+
+
+
+.impactContent .achievmentsContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+
+
+
+
+}
+
+
+.impactContent .achievmentsContainer .achievements {
+    grid-column: 1 / 1;
+}
+
+
+
+.impactContent .achievements .header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.impactContent .achievements .header h1 {
+    font-size: 3.6rem;
+    font-weight: 600;
+    margin: 0;
+    color: var(--text-primary);
+
+}
+
+
+.impactContent .achievements .header hr {
+    width: 27rem;
+    height: 0.1rem;
+    background-color: var(--text-primary);
+    border: none;
+    border-radius: 10rem;
+    margin: 0;
+}
+
+
+.impactContent .achievements .achievementTitle h1 {
+    font-size: 1.7rem;
+    font-weight: 400;
+}
+
+
+.impactContent .achievements .achievementContent {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0.1rem;
+    margin: 0;
+}
+
+
+.impactContent .achievements .achievementContent .achievement {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+
+.impactContent .achievements .achievementContent .achievement .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 3rem;
+    border-radius: 50px;
+    border: 1px solid var(--text-primary);
+}
+
+
+.impactContent .achievements .achievementContent .achievement .logo i {
+    font-size: 1.5rem;
+
+}
+
+
+.impactContent .achievements .achievementContent .achievement .description p {
+    font-size: 1rem;
+    font-weight: 200;
+    color: var(--text-primary);
+}
+
+
+.impactContent .achievements .achievementContent .achievement .description p span {
+    background: linear-gradient(to right, #FFFFFF, #CCCCCC);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+
+
+.impactContent .achievmentsContainer .achievementImage {
+    grid-column: 2 / 2;
+    width: 100%;
+    height: 100%;
+}
+
+
+.impactContent .achievmentsContainer .achievementImage img {
+    object-fit: cover;
+    height: 25rem;
+    width: 100%;
+    border-radius: 16px;
+
 }
