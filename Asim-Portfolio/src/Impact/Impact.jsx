@@ -67,30 +67,35 @@ const Impact = () => {
 
                 </div>
                 <div className={styles.milestoneContainer}>
-                    <div className={styles.milestoneHeader}>
-                        <h1>Milestones</h1>
+                    <div className={styles.milestoneInfo}>
 
-                    </div>
-                    <div className={styles.milestoneContent}>
+                        <div className={styles.milestoneContent}>
+                            <div className={styles.milestoneImage}>
+                                <img src="Images/Asim/Gallery_10.jpg" alt="" />
+                            </div>
+                            <div className={styles.milestoneDescription}>
 
+                                <div className={styles.milestoneHeaderDesc}>
+                                    <div className={styles.milestoneHeader}>
+                                        <h1>Milestones</h1>
+                                    </div>
+                                    <p>For more than 5 years, owners of medium and large businesses, popular artists, the best restaurants and stores of famous brands have trusted us:</p>
 
-                        <p>For more than 5 years, owners of medium and large businesses, popular artists, the best restaurants and stores of famous brands have trusted us:</p>
-                        <hr />
+                                </div>
 
-                        <div className={styles.milestoneImage}>
-                            <img src="Images/Asim/Gallery_10.jpg" alt="" />
+                                <div className={styles.milestoneItemContent}>
+                                    <img src="Images/Logos/logo_5.svg" alt="" />
+                                    <img src="Images/Logos/logo_6.svg" alt="" />
+                                    <img src="Images/Logos/logo_3.svg" alt="" />
+                                    <img src="Images/Logos/logo_7.svg" alt="" />
+                                    <img src="Images/Logos/logo_8.png" alt="" />
+                                    <img src="Images/Logos/logo_9.svg" alt="" />
+                                </div>
+                            </div>
                         </div>
-
-                        <div className={styles.milestoneItemContent}>
-                            <img src="Images/Logos/logo_5.svg" alt="" />
-                            <img src="Images/Logos/logo_6.svg" alt="" />
-                            <img src="Images/Logos/logo_3.svg" alt="" />
-                            <img src="Images/Logos/logo_7.svg" alt="" />
-                            <img src="Images/Logos/logo_8.png" alt="" />
-                            <img src="Images/Logos/logo_9.svg" alt="" />
-                        </div>
-
                     </div>
+
+
                 </div>
 
             </div>
