@@ -136,8 +136,10 @@
 .ProductContentPreview {
     width: 100%;
     position: relative;
+    max-width: 50rem;
 
     /* 16:9 Aspect Ratio */
+    padding-bottom: 56.25%;
     height: 0;
     background: #000;
     border-radius: 12px;
