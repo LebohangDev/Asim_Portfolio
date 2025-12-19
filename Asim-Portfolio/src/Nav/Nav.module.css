@@ -2,7 +2,15 @@
     display: grid;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    position: fixed;
+    margin: 0 auto;
+    width: 100%;
+    height: 7rem;
+    z-index: 1000;
+}
+
+.navContainer_hidden {
+    display: none;
 }
 
 .navContainer nav {

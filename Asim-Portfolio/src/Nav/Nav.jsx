@@ -1,38 +1,94 @@
-import { useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import styles from './Nav.module.css';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const Nav = ({ activeNav, setActiveNav }) => {
+const Nav = ({ activeNav, setActiveNav, containerRef }) => {
     const [hamMenu, setHamMenu] = useState(false);
+    const [isVisible, setIsVisible] = useState(true);
+
+    let lastScrollTop = 0;
+
+
+    useEffect(() => {
+
+        const container = containerRef.current;
+
+
+        const isScrolling = (event) => {
+
+
+
+
+
+            let currentScrollTop = event.target.scrollTop;
+
+            // if currentScroll top is greater that last know scroll top postion set nav as visible else hidden
+            if (currentScrollTop > lastScrollTop) {
+                setIsVisible(false);
+                console.log("scrolling down")
+            } else if (currentScrollTop < lastScrollTop) {
+                setIsVisible(true);
+                console.log("scrolling up")
+            }
+
+            // update lastScrollTop to currentscrll top 
+            lastScrollTop = currentScrollTop;
+
+        }
+
+
+        container.addEventListener('scroll', isScrolling);
+
+        return () => {
+            container.removeEventListener('scroll', isScrolling);
+        }
+
+    }, [lastScrollTop]); // rune everytime isvisbile changes 
+
+
+
+
 
     return (
 
         <>
-            <div className={styles.navContainer}>
-                <nav>
-                    <ul>
-                        <li className={activeNav === 'Home' ? styles.active : ''}>
-                            <i class="ri-home-6-line"></i>
-                            <a href="#Home" onClick={() => setActiveNav('Home')}>Home</a>
-                        </li>
-                        <li className={activeNav === 'Impact' ? styles.active : ''}>
-                            <i class="ri-meteor-line"></i>
-                            <a href="#Impact" onClick={() => setActiveNav('Impact')} >Impact</a>
-                        </li>
-                        <li className={activeNav === 'Product' ? styles.active : ''}>
-                            <i class="ri-shopping-cart-2-line"></i>
-                            <a href="#Product" onClick={() => setActiveNav('Product')} >Product</a>
-                        </li>
-                        <li className={activeNav === 'Gallery' ? styles.active : ''}>
-                            <i class="ri-multi-image-line"></i>
-                            <a href="#Gallery" onClick={() => setActiveNav('Gallery')} >Gallery</a>
-                        </li>
-                        <h2>
-                            Asim
-                        </h2>
-                    </ul>
-                </nav>
-            </div>
+            <AnimatePresence>
+                <motion.div
+                    key={isVisible}
+                    initial={{ opacity: 0, y: -60 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -60 }}
+                    transition={{ duration: 0.4, ease: 'easeInOut' }}
+                    className={isVisible === true ? styles.navContainer : styles.navContainer_hidden}
+                >
+
+                    <nav >
+                        <ul>
+                            <li className={activeNav === 'Home' ? styles.active : ''}>
+                                <i class="ri-home-6-line"></i>
+                                <a href="#Home" onClick={() => setActiveNav('Home')}>Home</a>
+                            </li>
+                            <li className={activeNav === 'Impact' ? styles.active : ''}>
+                                <i class="ri-meteor-line"></i>
+                                <a href="#Impact" onClick={() => setActiveNav('Impact')} >Impact</a>
+                            </li>
+                            <li className={activeNav === 'Product' ? styles.active : ''}>
+                                <i class="ri-shopping-cart-2-line"></i>
+                                <a href="#Product" onClick={() => setActiveNav('Product')} >Product</a>
+                            </li>
+                            <li className={activeNav === 'Gallery' ? styles.active : ''}>
+                                <i class="ri-multi-image-line"></i>
+                                <a href="#Gallery" onClick={() => setActiveNav('Gallery')} >Gallery</a>
+                            </li>
+                            <h2>
+                                Asim
+                            </h2>
+                        </ul>
+                    </nav>
+
+
+                </motion.div>
+            </AnimatePresence>
 
             <div className={styles.hamburgerContainer}>
                 <div className={styles.hamHeader}>
@@ -46,7 +102,7 @@ const Nav = ({ activeNav, setActiveNav }) => {
                 </div>
 
                 <AnimatePresence>
-                    {hamMenu && (
+                    {hamMenu === true ? (
                         <motion.div
                             className={styles.hamMenuActive}
                             initial={{ x: '-100%' }}
@@ -96,7 +152,7 @@ const Nav = ({ activeNav, setActiveNav }) => {
                                 </p>
                             </div>
                         </motion.div>
-                    )}
+                    ) : null}
                 </AnimatePresence>
             </div>
 

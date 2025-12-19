@@ -24,7 +24,7 @@ const Impact = () => {
         }
     ]
     return (
-        <div className={styles.impactContainer}>
+        <div id="Impact" className={styles.impactContainer}>
             <div className={styles.impactContent}>
 
                 <div className={styles.achievmentsContainer}>

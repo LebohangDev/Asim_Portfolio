@@ -9,6 +9,7 @@
   overflow: hidden;
   background: var(--bg-primary);
   color: var(--text-primary);
+  overflow: hidden;
 
 
   --bg-primary: black;

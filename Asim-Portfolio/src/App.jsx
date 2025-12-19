@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Home from './Home/Home';
 import Impact from './Impact/Impact';
 import Product from './Product/Product';
@@ -7,13 +7,20 @@ import Gallery from './Gallery/Gallery';
 import Nav from './Nav/Nav';
 import Footer from './Footer/Footer';
 
+
 function App() {
 
   const [activeNav, setActiveNav] = useState('Home');
+  const containerRef = useRef(null);
+
+
+
+
+
   return (
-    <div className="app">
-      <div className="header">
-        <Nav activeNav={activeNav} setActiveNav={setActiveNav} />
+    <div className="app" ref={containerRef} >
+      <div className={'header'} >
+        <Nav activeNav={activeNav} setActiveNav={setActiveNav} containerRef={containerRef} />
 
       </div>
 
