@@ -1,106 +1,111 @@
 
-import React from 'react';
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import styles from './Impact.module.css';
 
 const Impact = () => {
 
+
+
+
     const achievements = [
         {
+            description: "Conducted in depth market research and validation to help founders in the UAE market.",
+            logo: "ri-search-line",
+        },
+        {
+            description: "Advised entrepreneurs on choosing the right business structure, licensing, and legal setup to ensure long term compliance and scalability.",
+            logo: "ri-scales-3-line",
+        },
+        {
+            description: "Supported the setup of core operations in Dubai, including banking, visas, and regulatory processes for smooth business execution.",
+            logo: "ri-building-4-line",
+        },
+        {
+            description: "Guided founders in scaling their businesses the smart way through strategic planning, operational efficiency, and sustainable growth models.",
+            logo: "ri-line-chart-line",
+        },
+    ];
 
-            description: "Founded <span>@Quiickwork</span>, a Dubai-based business setup company supporting startups and established firms",
-            logo: "ri-hammer-line"
-        },
-        {
-            description: "Helped local and international entrepreneurs launch, license, and scale businesses in the UAE",
-            logo: "ri-rocket-2-line"
-        },
-        {
-            description: "Enabled global brands to establish operational bases in Dubai through strategic advisory and compliance support",
-            logo: "ri-earth-line"
-        },
-        {
-            description: "Built a diverse client portfolio across multiple industries, contributing to Dubai’s startup ecosystem",
-            logo: "ri-shake-hands-line"
-        }
-    ]
+    const images_1 = [
+        "Images/Asim/Gallery_13.jpg",
+        "Images/Asim/Gallery_14.jpg",
+        "Images/Asim/Gallery_10.jpg",
+        "Images/Asim/Gallery_13.jpg",
+        "Images/Asim/Gallery_14.jpg",
+    ];
+
+    const images_2 = [
+        "Images/Asim/Gallery_14.jpg",
+        "Images/Asim/Gallery_10.jpg",
+        "Images/Asim/Gallery_13.jpg",
+        "Images/Asim/Gallery_14.jpg",
+        "Images/Asim/Gallery_10.jpg",
+    ];
+
     return (
         <div id="Impact" className={styles.impactContainer}>
             <div className={styles.impactContent}>
 
-                <div className={styles.achievmentsContainer}>
-
-
-                    {
-                        <div className={styles.achievements}>
-                            <div className={styles.header}>
-                                <h1>Changing the Business Landscape</h1>
-                                <hr />
-                            </div>
-                            <div className={styles.achievementTitle}>
-                                <h1>Achievements</h1>
-
-
-                            </div>
-                            <div className={styles.achievementContent}>
-                                {
-                                    achievements.map((achievement, index) => (
-                                        <div key={index} className={styles.achievement}>
-                                            <div className={styles.logo}>
-                                                <i className={achievement.logo}></i>
-                                            </div>
-                                            <div className={styles.description}>
-                                                <p dangerouslySetInnerHTML={{ __html: achievement.description }}></p>
-                                            </div>
-                                        </div>
-                                    ))
-                                }
-
-                            </div>
-
-
-                        </div>
-                    }
-
-                    <div className={styles.achievementImage}>
-                        <img src="Images/Asim/Gallery_13.jpg" alt="" />
-                    </div>
-
+                <div className={styles.headerSection}>
+                    <h1>Why Learn Dubai From <span>Me?</span></h1>
+                    <p className={styles.subtitle}>I’ve Seen What Works And What Fails in Dubai.</p>
+                    <p className={styles.description}>
+                        Dubai rewards the people who understand how it works. For the past 5+ years, I’ve helped founders, creators, and global brands <span>do exactly that.</span>
+                    </p>
                 </div>
-                <div className={styles.milestoneContainer}>
-                    <div className={styles.milestoneInfo}>
 
-                        <div className={styles.milestoneContent}>
-                            <div className={styles.milestoneImage}>
-                                <img src="Images/Asim/Gallery_10.jpg" alt="" />
-                            </div>
-                            <div className={styles.milestoneDescription}>
-
-                                <div className={styles.milestoneHeaderDesc}>
-                                    <div className={styles.milestoneHeader}>
-                                        <h1>Milestones</h1>
+                <div className={styles.contentGrid}>
+                    <div className={styles.achievementsList}>
+                        <div className={styles.listHeader}>
+                            <h1>What I Help Businesses Achieve</h1>
+                        </div>
+                        <div className={styles.listContent}>
+                            {achievements.map((achievement, index) => (
+                                <div key={index} className={styles.achievementItem}>
+                                    <div className={styles.iconContainer}>
+                                        <i className={achievement.logo}></i>
                                     </div>
-                                    <p>For more than 5 years, owners of medium and large businesses, popular artists, the best restaurants and stores of famous brands have trusted us:</p>
-
+                                    <p>{achievement.description}</p>
                                 </div>
-
-                                <div className={styles.milestoneItemContent}>
-                                    <img src="Images/Logos/logo_5.svg" alt="" />
-                                    <img src="Images/Logos/logo_6.svg" alt="" />
-                                    <img src="Images/Logos/logo_3.svg" alt="" />
-                                    <img src="Images/Logos/logo_7.svg" alt="" />
-                                    <img src="Images/Logos/logo_8.png" alt="" />
-                                    <img src="Images/Logos/logo_9.svg" alt="" />
-                                </div>
-                            </div>
+                            ))}
                         </div>
                     </div>
 
+                    <div className={styles.imageWrapper}>
+                        <motion.div
+                            // animate the image container to move from left to right by 50 percent infinite times
+                            className={styles.imageContainer1}
+                            animate={{ x: "-50%" }}
+                            transition={{
+                                duration: 50,
+                                ease: "linear",
+                                repeat: Infinity
+                            }}
+                        >
+                            {/*using spread operator to duplicate images to extend the animation essentilly creating a new array with double the content*/}
+                            {[...images_1, ...images_1].map((img, index) => (
+                                <img key={index} src={img} alt="" />
+                            ))}
+                        </motion.div>
+                        <motion.div
+                            className={styles.imageContainer2}
+                            animate={{ x: "50%" }}
+                            transition={{
+                                duration: 50,
+                                ease: "linear",
+                                repeat: Infinity
+                            }}
+                        >
 
+                            {[...images_2, ...images_2].map((img, index) => (
+                                <img key={index} src={img} alt="" />
+                            ))}
+                        </motion.div>
+                    </div>
                 </div>
 
             </div>
-
-
         </div>
     );
 };

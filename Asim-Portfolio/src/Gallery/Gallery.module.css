@@ -1,18 +1,15 @@
 /* Gallery.module.css */
 
 .galleryContainer {
-
-
-
-
     width: 100%;
     max-width: 1100px;
-
     margin: 0 auto;
     min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
 }
-
-
 
 .GalleryHeader {
     text-align: center;
@@ -25,41 +22,103 @@
     font-size: 3rem;
     font-weight: 500;
     text-transform: uppercase;
-
     letter-spacing: 0.1rem;
     margin-bottom: 0;
+    color: var(--text-primary);
 }
-
-
 
 .GalleryHeader hr {
     border: 1px solid #ffffff;
-
     width: 200px;
+}
+
+/*window (the viewport) mmust stay still and hide everything outside of it like a window (overflow hidden)*/
+.ActivitiesContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    overflow: hidden;
+    gap: 2rem;
+}
+
+
+.ActivitiesContainer .ImagesContainer {
+
+    display: flex;
+    flex-direction: row;
+
+    margin: 0 auto;
+    width: max-content;
+
+
+    align-items: center;
+    gap: 2rem;
+
 
 }
 
 
-.galleryContainer .imageWrapper img {
+.ActivitiesContainer .ImagesContainer .imageCardContainer {
     width: 100%;
-    height: auto;
-    object-fit: cover;
+    height: 100%;
+}
 
+
+
+
+
+.ActivitiesContainer .ImagesContainer .imageCardContainer img {
+    width: 20rem;
+
+    height: 25rem;
+
+    border-radius: 12px;
+    overflow-x: hidden;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+
+/* Dots */
+.dotsContainer {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding-bottom: 2rem;
+    flex-wrap: wrap;
 
 }
 
+.dotsContainer span {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.dotsContainer .activeDot {
+    background-color: var(--accent-primary);
+    transform: scale(1.2);
+
+}
 
 @media (max-width: 768px) {
     .galleryContainer {
-        padding: 2rem 1rem;
-        max-width: 400px;
+        max-width: 90%;
+    }
+
+    .GalleryHeader h1 {
+        font-size: 2rem;
     }
 }
 
 
-@media (max-width: 1024px) {
+
+@media (min-width: 768px) and (max-width: 1280px) and (orientation: portrait) {
     .galleryContainer {
-        padding: 2rem 1rem;
-        max-width: 95%
+        max-width: 90%;
     }
 }

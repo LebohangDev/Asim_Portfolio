@@ -60,10 +60,12 @@
     font-size: 1.4rem;
 }
 
-.navContainer nav ul h2 {
-    color: var(--text-primary);
-    font-weight: 200;
-    padding-left: 1rem;
+.navContainer nav ul img {
+    width: 10rem;
+    height: 10rem;
+    position: relative;
+    top: 0.7rem;
+    left: 1rem;
 }
 
 

@@ -1,523 +1,247 @@
 .impactContainer {
     background-color: #1E1E1E;
-    z-index: 2;
-    width: 100%;
-    padding-bottom: 4rem;
-    left: 0;
+    z-index: 15;
+
+    height: 50%;
+    padding: 5rem 2rem;
     position: relative;
-    padding-top: 5rem;
-
-
 }
 
 .impactContent {
-    display: grid;
-    grid-template-columns: minmax(100%, 1fr);
-    grid-template-rows: 1fr;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
 }
 
+/* Header Section */
+.headerSection {
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
 
+.headerSection h1 {
+    font-size: 6rem;
+    font-weight: 600;
 
+    margin: 0;
+    color: var(--text-primary);
 
-.impactContent .achievmentsContainer {
+}
+
+.headerSection h1 span {
+    color: var(--accent-primary);
+
+}
+
+.headerSection .subtitle {
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.headerSection .description {
+    font-size: 1.5rem;
+    font-weight: 200;
+    max-width: 800px;
+
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.headerSection .description span {
+    color: var(--accent-primary);
+
+}
+
+.contentGrid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr;
-    gap: 2rem;
 
-
-
-
-}
-
-
-.impactContent .achievmentsContainer .achievements {
-    grid-column: 1 / 1;
-}
-
-
-
-.impactContent .achievements .header {
-    display: flex;
-    flex-direction: column;
+    gap: 4rem;
     align-items: flex-start;
-    justify-content: center;
-    gap: 1rem;
-}
-
-.impactContent .achievements .header h1 {
-    font-size: 3.2rem;
-    font-weight: 400;
-    letter-spacing: 2px;
-    margin: 0;
-    color: var(--text-primary);
-
 }
 
 
-.impactContent .achievements .header hr {
-    width: 27rem;
-    height: 0.1rem;
-    background-color: var(--text-primary);
-    border: none;
-    border-radius: 10rem;
-    margin: 0;
-}
-
-
-.impactContent .achievements .achievementTitle h1 {
-    font-size: 1.7rem;
-    font-weight: 400;
-}
-
-
-.impactContent .achievements .achievementContent {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 0.1rem;
-    margin: 0;
-}
-
-
-.impactContent .achievements .achievementContent .achievement {
-
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-}
-
-
-.impactContent .achievements .achievementContent .achievement .logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.4rem;
-    text-align: center;
-    border-radius: 50px;
-    border: 1px solid var(--text-primary);
-}
-
-
-.impactContent .achievements .achievementContent .achievement .logo i {
-    font-size: 1.5rem;
-
-}
-
-
-.impactContent .achievements .achievementContent .achievement .description p {
-    font-size: 1rem;
-    font-weight: 200;
-    color: var(--text-primary);
-}
-
-
-.impactContent .achievements .achievementContent .achievement .description p span {
-    background: linear-gradient(to right, #FFFFFF, #CCCCCC);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: 900;
-    cursor: pointer;
-}
-
-
-
-.impactContent .achievmentsContainer .achievementImage {
-    grid-column: 2 / 2;
-    width: 100%;
-    height: 100%;
-}
-
-
-.impactContent .achievmentsContainer .achievementImage img {
-    object-fit: cover;
-    height: 25rem;
-    width: 100%;
-    border-radius: 16px;
-}
-
-
-.impactContent .milestoneContainer {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-
-}
-
-.impactContent .milestoneContainer .milestoneInfo {
-    width: 100%;
+.achievementsList {
     display: flex;
     flex-direction: column;
     gap: 2rem;
 }
 
-.impactContent .milestoneContainer .milestoneInfo .milestoneHeader h1 {
-    font-size: 3.6rem;
+.listHeader h1 {
+    font-size: 3rem;
     font-weight: 600;
     margin: 0;
     color: var(--text-primary);
+    border-bottom: 3px solid rgba(255, 255, 255);
+
+    padding-bottom: 0.5rem;
+
 }
 
-.impactContent .milestoneContainer .milestoneInfo .milestoneContent {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1fr;
+.listContent {
+    display: flex;
+    flex-direction: column;
     gap: 2rem;
-    align-items: flex-start;
 }
 
-.impactContent .milestoneContainer .milestoneInfo .milestoneContent .milestoneImage {
-    grid-column: 1/1;
-    /* Image to the right */
+.achievementItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+
+    gap: 1.5rem;
+}
+
+.iconContainer {
+    flex-shrink: 0;
+    width: 3.5rem;
+    height: 3.5rem;
+    border: 1px solid var(--text-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.iconContainer i {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+}
+
+.achievementItem p {
+    font-size: 1.1rem;
+    font-weight: 300;
+    line-height: 1.5;
+    color: var(--text-primary);
+    margin: 0;
+    padding-top: 0.5rem;
+
+}
+
+.imageWrapper {
     width: 100%;
     height: 100%;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    border-radius: 10px;
+    overflow: hidden;
+    mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+
 }
 
-.impactContent .milestoneContainer .milestoneInfo .milestoneContent .milestoneImage img {
+
+.imageWrapper .imageContainer1 {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+
+}
+
+.imageWrapper .imageContainer2 {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+
+}
+
+
+.imageWrapper .imageContainer1 img {
+    flex-shrink: 0;
+    width: 30rem;
+    height: 20rem;
     object-fit: cover;
-    height: 25rem;
-    width: 100%;
-    border-radius: 16px;
+    border-radius: 12px;
 }
 
-.impactContent .milestoneContainer .milestoneInfo .milestoneContent .milestoneDescription {
-    grid-column: 2/2;
-    /* Content to the left */
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    padding-right: 2rem;
+.imageWrapper .imageContainer2 img {
+    flex-shrink: 0;
+    width: 30rem;
+    height: 20rem;
+    object-fit: cover;
+    border-radius: 12px;
 }
 
-
-.impactContent .milestoneContainer .milestoneInfo .milestoneContent .milestoneDescription .milestoneHeader h1 {
-    font-size: 1.7rem;
-    font-weight: 400;
-    margin: 0;
-    color: var(--text-primary);
-}
+@media (max-width: 1024px) {
+    .contentGrid {
+        grid-template-columns: 1fr;
 
 
+    }
 
-.impactContent .milestoneContainer .milestoneInfo .milestoneContent .milestoneDescription .milestoneHeaderDesc {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
+    .headerSection h1 {
+        font-size: 5rem;
+    }
 
-.impactContent .milestoneContainer .milestoneInfo .milestoneContent .milestoneDescription .milestoneHeaderDesc p {
-    font-size: 1rem;
-    font-weight: 200;
-    margin: 0;
-    color: var(--text-primary);
-    line-height: 1.5;
-}
+    .listHeader h1 {
+        text-align: center;
+        font-size: 1.7rem;
+    }
 
-.impactContent .milestoneContainer .milestoneInfo .milestoneContent .milestoneDescription .milestoneHeaderDesc hr {
-    width: 27rem;
-    height: 0.1rem;
-    background-color: var(--text-primary);
-    border: none;
-    border-radius: 10rem;
-    margin: 1rem 0;
-}
-
-.impactContent .milestoneContainer .milestoneInfo .milestoneContent .milestoneDescription .milestoneItemContent {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    width: 100%;
-}
-
-.impactContent .milestoneContainer .milestoneInfo .milestoneContent .milestoneDescription .milestoneItemContent img {
-    flex-basis: calc(33.333% - 1rem);
-    max-width: calc(33.333% - 1rem);
-    height: auto;
-    max-height: 5rem;
-    object-fit: contain;
-}
-
-@media (max-width: 767px) {
-
-    .impactContainer {
-        padding-top: 2.4rem;
+    .listContent {
+        flex-direction: column;
+        align-items: flex-start;
     }
 
 
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .impactContainer {
+        padding: 3rem 1.5rem;
+    }
 
     .impactContent {
-        grid-template-columns: minmax(100%, 1fr);
-        max-width: 90%;
-
-
+        gap: 2rem;
     }
 
-    /* Achievements Mobile */
-    .impactContent .achievmentsContainer {
-
-        text-align: center;
+    .headerSection h1 {
+        font-size: 2.5rem;
     }
 
-    .impactContent .achievmentsContainer .achievements {
-        grid-column: 1 / -1;
-    }
-
-    .impactContent .achievmentsContainer .achievements .achievementTitle h1 {
-        font-size: 1.7rem;
-        font-weight: 300;
-    }
-
-    .impactContent .achievmentsContainer .achievements .header h1 {
-        font-size: 2.3rem;
-    }
-
-
-
-
-
-    .impactContent .achievmentsContainer .achievements .achievement .logo i {
+    .headerSection .subtitle {
         font-size: 1.4rem;
-        padding: 0.2rem;
-        text-align: center;
     }
 
-    .impactContent .achievmentsContainer .achievements .achievement .description p {
-        font-size: 1rem;
-        margin-top: 0;
-        line-height: 1.2;
-
-    }
-
-    .impactContent .achievmentsContainer .achievementImage {
-        grid-column: 1 / -1;
-
-        /* Smaller height for mobile */
-    }
-
-    .impactContent .achievmentsContainer .achievementImage img {
-        height: 100%;
-    }
-
-
-    .impactContent .achievements .header {
+    .listContent {
+        flex-direction: column;
         align-items: center;
     }
 
-    .impactContent .achievements .header h1 {
-        font-size: 2.5rem;
-        font-weight: 400;
-        line-height: 1.2;
-    }
-
-    .impactContent .achievements .header hr {
-        width: 100%;
-        /* Full width or specific responsive width */
-        max-width: 10rem;
-    }
-
-    .impactContent .achievements .achievementContent .achievement {
-        flex-direction: row;
-        /* Keep row or stack if needed? Row seems fine for logo+text */
-        align-items: flex-start;
-        text-align: left;
-    }
-
-    /* Milestone Mobile */
-    .impactContent .milestoneContainer {
-        margin-top: 2rem;
+    .contentGrid {
+        grid-template-columns: 1fr;
         gap: 2rem;
     }
 
-    .impactContent .milestoneContainer .milestoneInfo .milestoneContent {
-        display: flex;
-        flex-direction: column-reverse;
+    .imageWrapper {
+        min-height: 300px;
+    }
+
+    .achievementItem {
+        flex-direction: column;
+        /* Stack icon and text on very small screens? No, side-by-side ok. */
+        align-items: center;
         text-align: center;
-        /* Text top, Image bottom */
-        gap: 2rem;
     }
 
-    .impactContent .milestoneContainer .milestoneInfo .milestoneContent .milestoneImage {
-        width: 100%;
-        height: 20rem;
-    }
-
-    .impactContent .milestoneContainer .milestoneInfo .milestoneContent .milestoneImage img {
-        height: 100%;
-    }
-
-    .impactContent .milestoneContainer .milestoneInfo .milestoneContent .milestoneDescription {
-        width: 100%;
-        padding-right: 0;
-    }
-
-    .impactContent .milestoneContainer .milestoneInfo .milestoneContent .milestoneDescription .milestoneHeader h1 {
-        font-size: 1.7rem;
-        font-weight: 300;
-
-    }
-
-    .impactContent .milestoneContainer .milestoneInfo .milestoneContent .milestoneDescription .milestoneHeaderDesc hr {
-        width: 100%;
-        max-width: 15rem;
-    }
-}
-
-@media (min-width: 768px) and (max-width: 1280px) and (orientation: portrait) {
-
-
-    .impactContent {
-        grid-template-columns: minmax(100%, 1fr);
-        max-width: 90%;
-
-
-
-    }
-
-    .impactContent .achievmentsContainer {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
-
-    .impactContent .achievmentsContainer .achievements {
-        grid-column: 1 / -1;
-    }
-
-    .impactContent .achievmentsContainer .achievementImage {
-        grid-column: 1 / -1;
-        height: 25rem;
-    }
-
-    .impactContent .milestoneContainer .milestoneInfo .milestoneContent {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
-
-    /* Stack Milestones as well */
-    .impactContent .milestoneContainer .milestoneInfo .milestoneContent .milestoneDescription {
-        grid-column: 1 / -1;
-        order: 1;
-        /* First */
-        padding-right: 0;
-    }
-
-    .impactContent .milestoneContainer .milestoneInfo .milestoneContent .milestoneImage {
-        grid-column: 1 / -1;
-        order: 2;
-        /* Second */
-    }
-}
-
-@media (min-width: 768px) and (max-width: 1279px) and (orientation: landscape) {
-    .impactContent {
-        max-width: 95%;
-        grid-template-columns: minmax(100%, 1fr);
-        /* Stack vertically for landscape tablets too if space is tight, or keep grid? 
-           User asked to "do for landscape as well tablets impact". 
-           Usually landscape tablets act like desktops. 
-           However, if they want "responsive similar", stacking might be safer or adjusting widths.
-           Let's stack to be safe as per "do same". 
-        */
-        gap: 4rem;
-        padding-bottom: 4rem;
-    }
-
-    .impactContent .achievmentsContainer {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
-
-    .impactContent .achievmentsContainer .achievements {
-        grid-column: 1 / -1;
-    }
-
-    .impactContent .achievmentsContainer .achievementImage {
-        grid-column: 1 / -1;
-        height: 25rem;
-    }
-
-    .impactContent .milestoneContainer .milestoneInfo .milestoneContent {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
-
-    .impactContent .milestoneContainer .milestoneInfo .milestoneContent .milestoneDescription {
-        grid-column: 1 / -1;
-        order: 1;
-        padding-right: 0;
-    }
-
-    .impactContent .milestoneContainer .milestoneInfo .milestoneContent .milestoneImage {
-        grid-column: 1 / -1;
-        order: 2;
-        height: 25rem;
-    }
-}
-
-@media (min-width: 768px) and (max-width: 1279px) and (orientation: landscape) {
-    .impactContent {
-        max-width: 95%;
-        gap: 2rem;
-        padding-bottom: 2rem;
-    }
-
-    /* Achievements: 2 Columns (Text Left, Image Right) */
-    .impactContent .achievmentsContainer {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
-    }
-
-    .impactContent .achievmentsContainer .achievements {
-        grid-column: 1 / 2;
-    }
-
-    .impactContent .achievmentsContainer .achievementImage {
-        grid-column: 2 / 3;
-        height: 100%;
-        max-height: 30rem;
-        /* constrain height */
-    }
-
-    .impactContent .achievmentsContainer .achievementImage img {
-        height: 100%;
-        object-fit: cover;
-    }
-
-    /* Milestones: 2 Columns (Image Left, Text Right) */
-    .impactContent .milestoneContainer .milestoneInfo .milestoneContent {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
-    }
-
-    .impactContent .milestoneContainer .milestoneInfo .milestoneContent .milestoneImage {
-        grid-column: 1;
-        grid-row: 1;
-        height: 100%;
-        max-height: 30rem;
-    }
-
-    .impactContent .milestoneContainer .milestoneInfo .milestoneContent .milestoneImage img {
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .impactContent .milestoneContainer .milestoneInfo .milestoneContent .milestoneDescription {
-        grid-column: 2 / 2;
-        padding-right: 0;
-    }
-
-    /* Scale Fonts slightly if needed for fit */
-    .impactContent .achievements .header h1,
-    .impactContent .milestoneContainer .milestoneInfo .milestoneHeader h1 {
-        font-size: 3rem;
-        /* Slightly smaller than 3.6rem for better fit */
+    .achievementItem p {
+        padding-top: 0;
     }
 }

@@ -5,32 +5,33 @@ const Product = () => {
 
     const growthPath = [
         {
-            title: "Launch Right",
+            title: "M – Map Dubai & the Market",
             description:
-                "Choose the right license, structure your company correctly, and avoid costly setup mistakes.",
-            icon: "ri-target-line", // target icon
+                "Understand how Dubai really works: opportunities, costs, culture, and demand in your space.",
+            icon: "ri-map-pin-user-line",
         },
         {
-            title: "Stay Compliant",
+            title: "O – Own Your Vehicle",
             description:
-                "Understand banking, visas, and legal requirements to operate smoothly in Dubai.",
-            icon: "ri-scales-3-line", // scales icon
-            highlight: true, // center / accent item
+                "Choose the right role and model for you: founder, freelancer, investor, creator, or professional — and match it with the right visa + structure.",
+            icon: "ri-steering-2-line",
         },
         {
-            title: "Scale Smart",
+            title: "V – Verify Your Base",
             description:
-                "Learn proven strategies to grow, expand, and sustain your business long-term.",
-            icon: "ri-line-chart-line", // growth icon
+                "Set up the correct company, banking, and compliance so nothing breaks when you start growing.",
+            icon: "ri-shield-check-line",
+        },
+        {
+            title: "E – Expand with Intention",
+            description:
+                "Scale your income, network, and lifestyle in a way that’s sustainable, not chaotic.",
+            icon: "ri-rocket-2-line",
         },
     ];
     return (
         <div id="Product" className={styles.ProductContainer}>
-            <div className={styles.ProductHeader}>
-                <h1>BUILT IN <span>DUBAI</span></h1>
-                <hr />
-                <p>How to build Scale & sustain profitable Business in the UAE with <span>Asim Swati</span></p>
-            </div>
+
 
             <div className={styles.ProductContent}>
                 <div className={styles.ProductContentContainer}>
@@ -57,7 +58,7 @@ const Product = () => {
             <div className={styles.ProductLearnContainer}>
                 <div className={styles.ProductLearnHeader}>
                     <hr />
-                    <h1>The Proven Path to Growth</h1>
+                    <h1>My <span>4 Step</span> Formula</h1>
                     <hr />
                 </div>
                 <div className={styles.ProductLearnGrid}>

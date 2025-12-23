@@ -25,10 +25,10 @@ const Nav = ({ activeNav, setActiveNav, containerRef }) => {
             // if currentScroll top is greater that last know scroll top postion set nav as visible else hidden
             if (currentScrollTop > lastScrollTop) {
                 setIsVisible(false);
-                console.log("scrolling down")
+
             } else if (currentScrollTop < lastScrollTop) {
                 setIsVisible(true);
-                console.log("scrolling up")
+
             }
 
             // update lastScrollTop to currentscrll top 
@@ -80,9 +80,9 @@ const Nav = ({ activeNav, setActiveNav, containerRef }) => {
                                 <i class="ri-multi-image-line"></i>
                                 <a href="#Gallery" onClick={() => setActiveNav('Gallery')} >Gallery</a>
                             </li>
-                            <h2>
-                                Asim
-                            </h2>
+                            <div className={styles.imgContainer}>
+                                <img src="Images/Asim/Asim_signature_1.png" alt="" />
+                            </div>
                         </ul>
                     </nav>
 
