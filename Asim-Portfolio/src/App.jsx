@@ -4,6 +4,8 @@ import Home from './Home/Home';
 import Impact from './Impact/Impact';
 import Product from './Product/Product';
 import Gallery from './Gallery/Gallery';
+import PaymentSuccess from "./paymentPopups/PaymentSuccess.jsx";
+import PaymentCancel from "./paymentPopups/PaymentCancel.jsx";
 import Nav from './Nav/Nav';
 import Footer from './Footer/Footer';
 
@@ -11,36 +13,18 @@ import Footer from './Footer/Footer';
 function App() {
 
   const [activeNav, setActiveNav] = useState('Home');
+  const [paymentActive, setPaymentActive] = useState(false);
   const containerRef = useRef(null);
 
+
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveNav(entry.target.id);
-          }
-        });
-      },
-      {
-        root: containerRef.current,
-        threshold: 0.5,
-      }
-    );
-
-    const sections = ['Home', 'Impact', 'Product', 'Gallery'];
-    sections.forEach((id) => {
-      const element = document.getElementById(id);
-      if (element) observer.observe(element);
-    });
-
-    return () => {
-      sections.forEach((id) => {
-        const element = document.getElementById(id);
-        if (element) observer.unobserve(element);
-      });
-    };
+    const params = new URLSearchParams(window.location.search);
+    const payment = params.get("payment");
+    if (payment === "success") setPaymentActive(true);
+    if (payment === "cancel") setPaymentActive(true);
   }, []);
+
+
 
 
 
@@ -70,6 +54,12 @@ function App() {
         <div className={activeNav === 'Gallery' ? 'active' : 'gallery'}>
           <Gallery />
 
+        </div>
+        <div className={paymentActive === true ? 'activePaymentSuccess' : 'notActivePaymentSuccess'}>
+          <PaymentSuccess setPaymentActive={setPaymentActive} />
+        </div>
+        <div className={paymentActive === true ? 'activePaymentCancel' : 'notActivePaymentCancel'}>
+          <PaymentCancel setPaymentActive={setPaymentActive} />
         </div>
       </div>
 

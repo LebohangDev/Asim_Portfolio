@@ -106,26 +106,53 @@
     max-width: 100%;
 }
 
+.ProductContentBodyButton {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0;
+    width: fit-content;
+}
+
+.emailInput {
+    padding: 1.01rem;
+    font-size: 0.9rem;
+    border: none;
+    outline: none;
+    background-color: #F5F5F5;
+    color: #333;
+    width: 250px;
+    height: 100%;
+}
+
 .ProductContentBodyButton button {
     background: #FFB71B;
     background: linear-gradient(90deg, rgba(255, 183, 27, 1) 0%, rgb(119, 82, 1) 100%);
     color: #ffffff;
     border: none;
-    padding: 1rem 2rem;
-    font-size: 0.9rem;
+    padding: 0.76rem;
+    font-size: 0.7rem;
     letter-spacing: 2px;
     font-weight: 550;
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
 
     cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: box-shadow 0.2s;
 }
 
 .ProductContentBodyButton button:hover {
-    transform: translateY(-2px);
+
     box-shadow: 0 10px 20px rgba(245, 179, 1, 0.2);
+}
+
+.ProductContentBodyButton button:disabled {
+    background: #555;
+    color: #999;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
 }
 
 .ProductContentBodyButton i {
@@ -381,8 +408,27 @@
 
 
     /* Center the button on mobile */
-    .ProductContentBodyButton button {
+    .ProductContentBodyButton {
         margin: 0 auto;
+        flex-direction: row;
+
+    }
+
+    .ProductContentBodyButton button {
+        width: 100%;
+        justify-content: center;
+        font-size: 0.8rem;
+        padding: 1.04rem;
+        gap: 0;
+    }
+
+
+    .ProductContentBodyButton button i {
+        display: none;
+    }
+
+    .emailInput {
+        width: 100%;
 
     }
 
