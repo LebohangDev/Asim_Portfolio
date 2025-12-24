@@ -69,6 +69,24 @@ p {
   grid-column: 1 / -1;
 }
 
+.app .activePaymentSuccess {
+  grid-column: 1 / -1;
+}
+
+.app .activePaymentCancel {
+  grid-column: 1 / -1;
+}
+
+.app .notActivePaymentSuccess {
+  grid-column: 1 / -1;
+  display: none;
+}
+
+.app .notActivePaymentCancel {
+  grid-column: 1 / -1;
+  display: none;
+}
+
 
 
 
