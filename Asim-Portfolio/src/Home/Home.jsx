@@ -10,12 +10,12 @@ const Home = () => {
             <div id='Home' className={styles.homeContainer}>
                 <div className={styles.homeContent1}>
                     <div className={styles.description}>
-                        <h1>Opportunities move quickly in <span>Dubai.</span></h1>
-                        <p>Running fast is not enough</p>
-                        <p>you need to run in the right <span>direction</span></p>
+                        <h1>Opportunities move quiickly in <span>Dubai.</span></h1>
+                        <p><span>Running fast</span> is not enough</p>
+                        <p>you need to run in the <span>right direction</span></p>
                     </div>
                     <div className={styles.signature}>
-                        <img src="Images/Asim/Asim_signature_1.png" alt="" />
+                        <img src="Images/Asim/Asim_signature_1.svg" alt="" />
                     </div>
 
 

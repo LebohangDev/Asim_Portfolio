@@ -5,26 +5,43 @@ import styles from './Gallery.module.css';
 const Gallery = () => {
     const images = Array.from({ length: 14 }, (_, i) => `Images/Asim/Gallery_${i + 1}.jpg`);
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [containerWidth, setContainerWidth] = useState(0);
-    const containerRef = useRef(null);
 
+
+
+
+
+
+
+
+    const [imageWidth, setImageWidth] = useState(300);
 
     useEffect(() => {
-        if (containerRef.current) {
-            setContainerWidth(containerRef.current.offsetWidth);
-        }
+        const updateWidth = () => {
+            if (window.innerWidth <= 480) {
+
+                setImageWidth(270);
+            } else if (window.innerWidth <= 768) {
+
+                setImageWidth(270);
+            } else if (window.innerWidth <= 1024) {
+
+                setImageWidth(270);
+            } else {
+                setImageWidth(300);
+            }
+        };
+
+        // Initial call
+        updateWidth();
+
+        window.addEventListener('resize', updateWidth);
+        return () => window.removeEventListener('resize', updateWidth);
     }, []);
-
-
-
 
     useEffect(() => {
 
         const timer = setInterval(() => {
             setCurrentIndex(c => (c + 1) % images.length);
-            handleContainerScroll();
-
-
         }, 5000);
 
         return () => clearInterval(timer);
@@ -43,8 +60,8 @@ const Gallery = () => {
 
                 <motion.div
                     className={styles.ImagesContainer}
-                    ref={containerRef}
-                    animate={{ x: -currentIndex * 300 }}
+
+                    animate={{ x: -currentIndex * (imageWidth + 10) }}
                     transition={{ ease: "easeInOut", duration: 0.5 }}
                 >
                     {images.map((image, index) => (

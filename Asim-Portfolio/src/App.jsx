@@ -13,6 +13,35 @@ function App() {
   const [activeNav, setActiveNav] = useState('Home');
   const containerRef = useRef(null);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveNav(entry.target.id);
+          }
+        });
+      },
+      {
+        root: containerRef.current,
+        threshold: 0.5,
+      }
+    );
+
+    const sections = ['Home', 'Impact', 'Product', 'Gallery'];
+    sections.forEach((id) => {
+      const element = document.getElementById(id);
+      if (element) observer.observe(element);
+    });
+
+    return () => {
+      sections.forEach((id) => {
+        const element = document.getElementById(id);
+        if (element) observer.unobserve(element);
+      });
+    };
+  }, []);
+
 
 
 
@@ -26,26 +55,26 @@ function App() {
 
       <div className="main">
 
-        <div className={activeNav === 'Home' ? 'home active' : 'home'}>
+        <div className={activeNav === 'Home' ? 'active' : 'home'}>
           <Home />
 
         </div>
-        <div className={activeNav === 'Impact' ? 'impact active' : 'impact'}>
+        <div className={activeNav === 'Impact' ? 'active' : 'impact'}>
           <Impact />
 
         </div>
-        <div className={activeNav === 'Product' ? 'product active' : 'product'}>
+        <div className={activeNav === 'Product' ? 'active' : 'product'}>
           <Product />
 
         </div>
-        <div className={activeNav === 'Gallery' ? 'gallery active' : 'gallery'}>
+        <div className={activeNav === 'Gallery' ? 'active' : 'gallery'}>
           <Gallery />
 
         </div>
       </div>
 
       <div className="footer">
-        <Footer />
+        <Footer setActiveNav={setActiveNav} />
       </div>
 
     </div>

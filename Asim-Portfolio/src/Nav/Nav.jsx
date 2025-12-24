@@ -81,7 +81,7 @@ const Nav = ({ activeNav, setActiveNav, containerRef }) => {
                                 <a href="#Gallery" onClick={() => setActiveNav('Gallery')} >Gallery</a>
                             </li>
                             <div className={styles.imgContainer}>
-                                <img src="Images/Asim/Asim_signature_1.png" alt="" />
+                                <img src="Images/Asim/Asim_signature_1.svg" alt="" />
                             </div>
                         </ul>
                     </nav>
@@ -92,7 +92,9 @@ const Nav = ({ activeNav, setActiveNav, containerRef }) => {
 
             <div className={styles.hamburgerContainer}>
                 <div className={styles.hamHeader}>
-                    <h2>Asim</h2>
+                    <div className={styles.imgContainer}>
+                        <img src="Images/Asim/Asim_signature_1.svg" alt="" />
+                    </div>
                     <img
                         src="Images/hamburger.svg"
                         alt="Menu"
@@ -140,9 +142,8 @@ const Nav = ({ activeNav, setActiveNav, containerRef }) => {
                                 </h1>
 
                                 <div className={styles.socials}>
-                                    <i class="ri-instagram-line"></i>
-                                    <i class="ri-facebook-line"></i>
-                                    <i class="ri-youtube-line"></i>
+                                    <i className="ri-instagram-line" style={{ color: 'var(--accent-primary)' }}></i>
+                                    <i className="ri-linkedin-fill" style={{ color: 'var(--accent-primary)' }}></i>
                                 </div>
                             </div>
 

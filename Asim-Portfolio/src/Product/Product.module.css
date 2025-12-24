@@ -204,7 +204,7 @@
 .ProductLearnGridItem {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 3rem 4rem;
+    grid-template-rows: 5rem 3rem 4rem;
     justify-items: center;
     gap: 1rem;
 
@@ -233,7 +233,7 @@
 }
 
 .ProductLearnGridItem h1 {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     margin-bottom: 1rem;
     font-weight: 700;
     letter-spacing: 2px;
@@ -280,7 +280,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 1rem;
+        gap: 2rem;
     }
 
     .ProductLearnGridItem i {
@@ -360,6 +360,7 @@
     .ProductContentContainer {
         align-items: center;
         text-align: center;
+
         order: 2;
 
 
@@ -387,12 +388,10 @@
 
     .ProductLearnContainer {
         padding: 1rem;
-    }
-
-    .ProductLearnGrid {
-        grid-template-columns: 1fr;
         gap: 4rem;
     }
+
+
 
     .ProductLearnHeader {
         gap: 1rem;
@@ -415,10 +414,23 @@
         text-align: center;
     }
 
+    .ProductLearnGrid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .ProductLearnGridItem {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 10rem 2rem 6rem;
+
+
+    }
+
 
 
     .ProductLearnGridItem h1 {
-        font-size: 2rem;
+        font-size: 1.6rem;
     }
 
     .ProductLearnGridItem p {

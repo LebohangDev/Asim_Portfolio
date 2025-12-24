@@ -35,14 +35,12 @@
 
 }
 
-/* Left Column - Brand (Direct H2) */
-.footerContent h2 {
 
-    font-size: 2.5rem;
-    font-weight: 400;
 
-    margin: 0;
-    padding-left: 2rem;
+
+.signatureContainer img {
+    width: 12rem;
+    height: 12rem;
 
 }
 
@@ -142,9 +140,13 @@
         gap: 3rem;
     }
 
-    .footerContent h2 {
-        font-size: 3rem;
+    .signatureContainer {
         padding-left: 0;
+        justify-content: center;
+    }
+
+    .signatureContainer img {
+        width: 14rem;
     }
 
     .footerNav {

@@ -61,10 +61,10 @@
 }
 
 .navContainer nav ul img {
-    width: 10rem;
-    height: 10rem;
+    width: 7rem;
+    height: 7rem;
     position: relative;
-    top: 0.7rem;
+
     left: 1rem;
 }
 
@@ -99,6 +99,7 @@
         width: 90%;
         max-width: 600px;
 
+
         padding: 1rem;
     }
 
@@ -118,11 +119,18 @@
         filter: invert(1);
     }
 
-    .hamHeader h2 {
-        color: var(--text-primary);
-        font-weight: 200;
-        margin: 0;
-        font-size: 3.5rem;
+    .hamHeader .imgContainer {
+        position: relative;
+
+    }
+
+
+    .hamHeader .imgContainer img {
+        width: 12rem;
+
+
+        height: auto;
+        object-fit: contain;
     }
 
     .hamMenu {
@@ -143,7 +151,7 @@
         position: fixed;
         left: 0;
         top: 0;
-        z-index: 1;
+        z-index: 10000;
     }
 
 
