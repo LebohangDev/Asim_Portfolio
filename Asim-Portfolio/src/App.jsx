@@ -55,10 +55,10 @@ function App() {
           <Gallery />
 
         </div>
-        <div className={paymentActive === true ? 'activePaymentSuccess' : 'notActivePaymentSuccess'}>
+        <div className={paymentActive === true ? 'activeSection' : 'notActiveSection'}>
           <PaymentSuccess setPaymentActive={setPaymentActive} />
         </div>
-        <div className={paymentActive === true ? 'activePaymentCancel' : 'notActivePaymentCancel'}>
+        <div className={paymentActive === true ? 'activeSection' : 'notActiveSection'}>
           <PaymentCancel setPaymentActive={setPaymentActive} />
         </div>
       </div>

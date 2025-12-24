@@ -69,15 +69,13 @@ p {
   grid-column: 1 / -1;
 }
 
-.app .activePaymentSuccess {
-  grid-column: 1 / -1;
+.app .activeSection {
+  display: block;
 }
 
-.app .activePaymentCancel {
-  grid-column: 1 / -1;
+.app .notActiveSection {
+  display: none;
 }
-
-
 
 
 
