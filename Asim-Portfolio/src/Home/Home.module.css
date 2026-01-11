@@ -7,7 +7,7 @@
     justify-content: center;
     align-items: center;
     height: 100%;
-    max-width: 1100px;
+    max-width: 1300px;
     margin: 0 auto;
 }
 
@@ -21,7 +21,7 @@
 
 
 .homeContent1 .description h1 {
-    font-size: 3rem;
+    font-size: var(--h1-size);
     font-weight: 900;
     margin: 0.4rem;
     width: fit-content;
@@ -35,7 +35,7 @@
 
 
 .homeContent1 .description p {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
 
     font-weight: 200;
     margin: 0;
@@ -212,14 +212,145 @@
         top: 0;
         left: -10%;
         margin-left: 20%;
-        width: 27rem;
-        height: 50rem;
-        height: auto;
+        width: 25rem;
+        height: 25rem;
         transform: none;
     }
 
 
+
+
+
+
+
 }
+
+@media (max-height: 500px) and (orientation: landscape) {
+    .homeContainer {
+        display: grid;
+        grid-template-columns: minmax(100%, 1fr);
+        grid-template-rows: 20rem 4rem auto;
+        align-items: center;
+        justify-items: center;
+        max-width: 90%;
+
+        height: auto;
+    }
+
+    /* Flatten structure to allow reordering mixed elements */
+    .homeContent1,
+    .homeContent2,
+    .homeContent2 .keywordsContainer {
+        display: contents;
+    }
+
+
+
+
+
+    .homeContent1 .description {
+        order: 3;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .homeContent1 .signature {
+        margin-top: 2rem;
+        order: 4;
+    }
+
+    .homeContent1 .signature img {
+        width: 12rem;
+        height: 12rem;
+    }
+
+
+
+
+
+
+
+
+    /* Restore Keywords Flex/Contents to handle reordering mixed children (Logo vs Group) */
+    .homeContent2 .keywordsContainer {
+        display: contents;
+    }
+
+    .homeContent2 .keywordsContainer img {
+        order: 2;
+        margin-bottom: 2rem;
+        width: 15rem;
+    }
+
+    /* Rotate the entire container of items for mobile */
+    .homeContent2 .keywordsContainer .itemContainer {
+        order: 5;
+        display: flex;
+        flex-direction: column;
+        /* Stacked vertically in local space */
+        /* Rotate -90deg -> Becomes Horizontal sequence of vertical items */
+        transform: rotate(-90deg);
+        transform-origin: center;
+        margin-top: 5rem;
+        margin-bottom: 2rem;
+        gap: 1.5rem;
+        align-items: flex-start;
+    }
+
+    .homeContent2 .keywordsContainer .item {
+        transform: none;
+        /* No individual rotation */
+        margin: 0;
+        white-space: nowrap;
+    }
+
+    .homeContent2 .keywordsContainer .itemContainer .item:nth-child(2) hr {
+        width: 4rem;
+        margin-left: 2rem;
+    }
+
+    .homeContent2 .keywordsContainer .itemContainer .item:nth-child(3) hr {
+        width: 4rem;
+        margin-left: 2rem;
+    }
+
+
+
+
+
+
+    .homeContent2 .imageContainer {
+        order: 6;
+        width: 100%;
+        max-width: 80%;
+        margin-top: 4rem;
+
+        display: flex;
+        justify-content: center;
+    }
+
+    .homeContent2 .imageContainer img {
+        position: relative;
+        top: 0;
+        left: -10%;
+        margin-left: 20%;
+        width: 25rem;
+        height: 25rem;
+        transform: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -288,20 +419,55 @@
         left: 0;
         margin-left: 10%;
         width: 40rem;
-        height: 50rem;
-        height: auto;
+        height: 40rem;
         transform: none;
     }
 }
 
 
+/* Tablets only (includes iPad landscape) — excludes mobile landscape by requiring taller height */
+@media only screen and (min-width: 768px) and (max-width: 1366px) and (orientation: landscape) and (min-height: 600px) {
 
-@media (min-width: 768px) and (max-width: 1279px) and (orientation: landscape) {
     .homeContainer {
         max-width: 90%;
-        grid-template-columns: 1fr 30rem auto;
+        grid-template-columns: 1fr 25rem auto;
         grid-template-rows: 1fr;
-        padding-bottom: 10rem;
+        padding-bottom: 5rem;
+    }
+
+    .homeContent1 {
+        grid-template-rows: 1fr;
+    }
+
+    .homeContent1 .description h1 {
+        font-size: var(--h1-size);
+    }
+
+    .homeContent1 .description p {
+        font-size: 1.25rem;
+    }
+
+    .homeContent2 .imageContainer img {
+        top: -15rem;
+        width: 40rem;
+        height: 40rem;
+    }
+
+    .homeContent2 .keywordsContainer {
+        margin-left: 4rem;
+    }
+}
+
+/*ipad pro*/
+
+
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: landscape) {
+
+    .homeContainer {
+        max-width: 90%;
+        grid-template-columns: 1fr 28rem auto;
+        grid-template-rows: 1fr;
+        padding-bottom: 5rem;
 
 
 
@@ -309,25 +475,22 @@
 
     .homeContent1 {
 
-        grid-template-rows: 15rem 12rem auto;
+        grid-template-rows: 1fr;
+
     }
 
 
 
     .homeContent1 .description h1 {
-        font-size: 3rem;
+        font-size: var(--h1-size);
     }
 
 
 
     .homeContent1 .description p {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
     }
 
-    .homeContent1 .signature {
-        position: relative;
-        right: 2rem;
-    }
 
 
 
@@ -339,14 +502,17 @@
 
 
     .homeContent2 .imageContainer img {
-        top: -15rem;
+        top: -18rem;
 
 
         width: 45rem;
-        height: 40rem;
+        height: 45rem;
+
     }
 
     .homeContent2 .keywordsContainer {
         margin-left: 4rem;
     }
+
+
 }

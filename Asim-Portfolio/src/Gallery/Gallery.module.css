@@ -19,7 +19,7 @@
 }
 
 .GalleryHeader h1 {
-    font-size: 3rem;
+    font-size: var(--h1-size);
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
@@ -110,9 +110,7 @@
         max-width: 90%;
     }
 
-    .GalleryHeader h1 {
-        font-size: 2rem;
-    }
+
 }
 
 

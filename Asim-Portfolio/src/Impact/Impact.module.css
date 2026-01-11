@@ -27,8 +27,7 @@
 }
 
 .headerSection h1 {
-    font-size: 5rem;
-    font-weight: 600;
+    font-size: var(--h1-size);
 
     margin: 0;
     color: var(--text-primary);
@@ -41,14 +40,15 @@
 }
 
 .headerSection .subtitle {
-    font-size: 2rem;
+    font-size: var(--h3-size);
     font-weight: 500;
     color: var(--text-primary);
     margin: 0;
 }
 
 .headerSection .description {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
+    /* Slightly larger than body */
     font-weight: 200;
     max-width: 800px;
 
@@ -79,7 +79,7 @@
 }
 
 .listHeader h1 {
-    font-size: 3rem;
+    font-size: var(--h2-size);
     font-weight: 600;
     margin: 0;
     color: var(--text-primary);
@@ -121,7 +121,7 @@
 }
 
 .achievementItem p {
-    font-size: 1.1rem;
+    font-size: var(--p-size);
     font-weight: 300;
     line-height: 1.5;
     color: var(--text-primary);
@@ -162,32 +162,44 @@
 }
 
 
-.imageWrapper .imageContainer1 img {
+.imageWrapper .imageContainer1 .imageLink,
+.imageWrapper .imageContainer2 .imageLink {
     flex-shrink: 0;
     width: 30rem;
     height: 20rem;
-    object-fit: cover;
+    display: block;
     border-radius: 12px;
+    overflow: hidden;
+    max-width: 80vw;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.imageWrapper .imageContainer2 img {
-    flex-shrink: 0;
-    width: 30rem;
-    height: 20rem;
+.imageWrapper .imageContainer1 .imageLink:hover,
+.imageWrapper .imageContainer2 .imageLink:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+}
+
+
+.imageWrapper .imageContainer1 .imageLink img,
+.imageWrapper .imageContainer2 .imageLink img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    border-radius: 12px;
+    display: block;
+
+
 }
 
 @media (max-width: 1024px) {
     .contentGrid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
 
 
     }
 
-    .headerSection h1 {
-        font-size: 5rem;
-    }
+    /* font-size: 5rem; Removed override to stick to variable */
 
     .listHeader h1 {
         text-align: center;
@@ -212,9 +224,9 @@
         gap: 2rem;
     }
 
-    .headerSection h1 {
+    /* .headerSection h1 {
         font-size: 2.5rem;
-    }
+    } Variable handles this */
 
     .headerSection .subtitle {
         font-size: 1.4rem;

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import styles from './Product.module.css';
+import { fadeInUp, staggerContainer, scaleIn } from '../animations';
 
 const Product = () => {
 
@@ -100,9 +102,15 @@ const Product = () => {
 
             <div className={styles.ProductContent}>
                 <div className={styles.ProductContentContainer}>
-                    <div className={styles.ProductContentHeader}>
+                    <motion.div
+                        className={styles.ProductContentHeader}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                        variants={fadeInUp}
+                    >
                         <h1>COURSE</h1>
-                    </div>
+                    </motion.div>
 
                     <div className={styles.ProductContentBody}>
                         <h1>Asim Swati Business Masterclass</h1>
@@ -133,16 +141,22 @@ const Product = () => {
                     <h1>My <span>4 Step</span> Formula</h1>
                     <hr />
                 </div>
-                <div className={styles.ProductLearnGrid}>
+                <motion.div
+                    className={styles.ProductLearnGrid}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    variants={staggerContainer}
+                >
                     {growthPath.map((item, index) => (
-                        <div key={index} className={styles.ProductLearnGridItem}>
+                        <motion.div key={index} className={styles.ProductLearnGridItem} variants={fadeInUp}>
                             <i className={item.icon}></i>
                             <h1>{item.title}</h1>
                             <p>{item.description}</p>
-                        </div>
+                        </motion.div>
                     ))}
 
-                </div>
+                </motion.div>
             </div>
 
 

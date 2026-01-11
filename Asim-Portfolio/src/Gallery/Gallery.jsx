@@ -1,9 +1,10 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import styles from './Gallery.module.css';
+import { fadeInUp } from '../animations';
 
 const Gallery = () => {
-    const images = Array.from({ length: 14 }, (_, i) => `Images/Asim/Gallery_${i + 1}.jpg`);
+    const images = useMemo(() => Array.from({ length: 21 }, (_, i) => `Images/Asim/Gallery_${i + 1}.jpg`), []);
     const [currentIndex, setCurrentIndex] = useState(0);
 
 
@@ -52,11 +53,23 @@ const Gallery = () => {
 
     return (
         <div id="Gallery" className={styles.galleryContainer}>
-            <div className={styles.GalleryHeader}>
+            <motion.div
+                className={styles.GalleryHeader}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeInUp}
+            >
                 <h1>A GALLERY OF MY ACTIVITIES</h1>
                 <hr />
-            </div>
-            <div className={styles.ActivitiesContainer}>
+            </motion.div>
+            <motion.div
+                className={styles.ActivitiesContainer}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeInUp}
+            >
 
                 <motion.div
                     className={styles.ImagesContainer}
@@ -66,7 +79,7 @@ const Gallery = () => {
                 >
                     {images.map((image, index) => (
                         <div className={styles.imageCardContainer} onClick={() => setCurrentIndex(index)} key={index}>
-                            <img src={image} alt={`Asim Swati Gallery ${index + 1}`} />
+                            <img src={image} alt={`Asim Swati Gallery ${index + 1}`} loading="lazy" decoding="async" />
                         </div>
 
                     ))}
@@ -85,7 +98,7 @@ const Gallery = () => {
                     ))}
                 </div>
 
-            </div>
+            </motion.div>
 
 
 

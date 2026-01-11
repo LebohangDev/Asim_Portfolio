@@ -17,7 +17,7 @@
 }
 
 .ProductHeader h1 {
-    font-size: 3rem;
+    font-size: var(--h1-size);
     font-weight: 800;
     text-transform: uppercase;
     margin-bottom: 1.5rem;
@@ -39,7 +39,7 @@
 }
 
 .ProductHeader p {
-    font-size: 1.1rem;
+    font-size: var(--p-size);
     color: #ffffff;
     line-height: 1.6;
     margin: 0 auto;
@@ -88,7 +88,7 @@
 }
 
 .ProductContentBody h1 {
-    font-size: 3rem;
+    font-size: var(--h1-size);
     font-weight: 400;
     line-height: 1.1;
     letter-spacing: 2px;
@@ -100,7 +100,7 @@
 
 .ProductContentBody p {
     color: #ffffff;
-    font-size: 1.1rem;
+    font-size: var(--p-size);
     font-weight: 300;
     margin-bottom: 2rem;
     max-width: 100%;
@@ -109,13 +109,16 @@
 .ProductContentBodyButton {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: stretch;
     gap: 0;
     width: fit-content;
+    height: 3.5rem;
+    /* Fixed height for perfect alignment */
 }
 
 .emailInput {
-    padding: 1.01rem;
+    padding: 0 1.5rem;
+    /* Horizontal padding only */
     font-size: 0.9rem;
     border: none;
     outline: none;
@@ -123,6 +126,9 @@
     color: #333;
     width: 250px;
     height: 100%;
+    box-sizing: border-box;
+    font-family: inherit;
+    /* Ensure font matches interface */
 }
 
 .ProductContentBodyButton button {
@@ -130,20 +136,27 @@
     background: linear-gradient(90deg, rgba(255, 183, 27, 1) 0%, rgb(119, 82, 1) 100%);
     color: #ffffff;
     border: none;
-    padding: 0.76rem;
+    padding: 0 1.5rem;
+    /* Horizontal padding matches look */
     font-size: 0.7rem;
     letter-spacing: 2px;
     font-weight: 550;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 1rem;
+    height: 100%;
+    box-sizing: border-box;
+    font-family: inherit;
+    /* Ensure font matches interface */
+    white-space: nowrap;
+    /* Prevent text wrap */
 
     cursor: pointer;
     transition: box-shadow 0.2s;
 }
 
 .ProductContentBodyButton button:hover {
-
     box-shadow: 0 10px 20px rgba(245, 179, 1, 0.2);
 }
 
@@ -204,13 +217,19 @@
 }
 
 .ProductLearnHeader h1 {
-    font-size: 3rem;
+    font-size: var(--h2-size);
     width: 30rem;
     text-align: center;
     margin: 0;
-    color: var(--accent-primary);
+
     font-weight: 700;
 }
+
+.ProductLearnHeader span {
+
+    color: var(--accent-primary);
+}
+
 
 .ProductLearnHeader hr {
     width: 10rem;
@@ -229,14 +248,12 @@
 }
 
 .ProductLearnGridItem {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 5rem 3rem 4rem;
-    justify-items: center;
-    gap: 1rem;
-
+    display: flex;
+    flex-direction: column;
     align-items: center;
     text-align: center;
+    gap: 0.2rem;
+    height: 100%;
 
 }
 
@@ -250,7 +267,8 @@
     background-color: #2A2A2A;
     border-radius: 50%;
     font-size: 2.8rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0;
+    /* Handled by gap */
     color: #FFFFFF;
     border: 6px solid rgba(255, 255, 255, 0.05);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -261,16 +279,23 @@
 
 .ProductLearnGridItem h1 {
     font-size: 1.2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0;
+    /* Handled by gap */
     font-weight: 700;
+    min-height: 2.5em;
+    /* Ensure alignment if lines wrap */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     letter-spacing: 2px;
     color: #FFFFFF;
 }
 
 .ProductLearnGridItem p {
-    font-size: 1rem;
+    font-size: var(--p-size);
     color: #B5B5B5;
     line-height: 1.6;
+
 }
 
 .ProductLearnGridItem:nth-child(2),
@@ -343,11 +368,10 @@
     }
 
     .ProductLearnGridItem {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 2rem 6rem;
-
-
+        /* display: grid; removed to inherit flex */
+        /* grid-template-columns: 1fr; removed */
+        /* grid-template-rows: 1fr 2rem 6rem; removed */
+        padding: 0 1rem;
     }
 
 
@@ -378,6 +402,7 @@
         grid-template-columns: 1fr;
         gap: 3rem;
         padding-top: 2rem;
+        max-width: 95%;
         text-align: center;
 
     }
@@ -410,16 +435,25 @@
     /* Center the button on mobile */
     .ProductContentBodyButton {
         margin: 0 auto;
-        flex-direction: row;
-
+        flex-direction: column;
+        /* Stack on mobile */
+        height: auto;
+        /* Allow height to grow */
+        gap: 1rem;
+        width: 100%;
+        max-width: 400px;
+        /* Prevent being too wide on tablets */
     }
 
     .ProductContentBodyButton button {
         width: 100%;
         justify-content: center;
         font-size: 0.8rem;
-        padding: 1.04rem;
+        padding: 0;
         gap: 0;
+        height: 3.5rem;
+        /* Explicit height for mobile stacking */
+        white-space: nowrap;
     }
 
 
@@ -429,7 +463,8 @@
 
     .emailInput {
         width: 100%;
-
+        height: 3.5rem;
+        /* Explicit height for mobile stacking */
     }
 
     .ProductLearnContainer {
@@ -466,11 +501,10 @@
     }
 
     .ProductLearnGridItem {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 10rem 2rem 6rem;
-
-
+        /* display: grid; removed to inherit flex */
+        /* grid-template-columns: 1fr; removed */
+        /* grid-template-rows: 10rem 2rem 6rem; removed */
+        padding: 0 1rem;
     }
 
 
