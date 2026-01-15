@@ -8,7 +8,7 @@
 }
 
 .impactContent {
-    max-width: 1200px;
+    max-width: 1300px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -165,13 +165,17 @@
 .imageWrapper .imageContainer1 .imageLink,
 .imageWrapper .imageContainer2 .imageLink {
     flex-shrink: 0;
-    width: 30rem;
-    height: 20rem;
+    width: 15rem;
+    height: 10rem;
     display: block;
     border-radius: 12px;
     overflow: hidden;
     max-width: 80vw;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .imageWrapper .imageContainer1 .imageLink:hover,
@@ -184,12 +188,10 @@
 
 .imageWrapper .imageContainer1 .imageLink img,
 .imageWrapper .imageContainer2 .imageLink img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
     display: block;
-
-
 }
 
 @media (max-width: 1024px) {

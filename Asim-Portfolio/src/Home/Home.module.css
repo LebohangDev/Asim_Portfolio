@@ -6,7 +6,7 @@
     grid-template-rows: 40rem;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    height: 100vh;
     max-width: 1300px;
     margin: 0 auto;
 }
@@ -213,7 +213,7 @@
         left: -10%;
         margin-left: 20%;
         width: 25rem;
-        height: 25rem;
+        height: 20rem;
         transform: none;
     }
 

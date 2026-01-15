@@ -40,7 +40,7 @@ const Home = () => {
                         className={styles.imageContainer}
                         initial="hidden"
                         animate="visible"
-                        variants={slideInFromRight}
+                        variants={fadeInUp}
                         transition={{ duration: 1.8, ease: "easeOut" }}
                     >
                         <img src="Images/Asim/Asim_Hero.png" alt="" />
