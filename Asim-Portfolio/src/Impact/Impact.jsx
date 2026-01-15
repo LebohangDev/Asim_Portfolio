@@ -24,17 +24,17 @@ const achievements = [
 ];
 
 const images_1 = [
-    { src: "Images/Logos/logo_1.svg", link: "https://emiratespadel.com/" },
-    { src: "Images/Logos/logo_2.svg", link: "https://sky-adventures.ae/" },
-    { src: "Images/Logos/Logo_3.svg", link: "https://linked4hr.com/" },
-    { src: "Images/Logos/logo_4.svg", link: "https://the-ether.com/" },
+    { src: "Images/Logos/logo_1.svg", link: "https://sky-adventures.ae/" },
+    { src: "Images/Logos/logo_2.svg", link: "https://linked4hr.com/" },
+    { src: "Images/Logos/Logo_3.svg", link: "https://the-ether.com/" },
+    { src: "Images/Logos/logo_4.svg", link: "https://onedrop-inv.com/" },
 ];
 
 const images_2 = [
-    { src: "Images/Logos/logo_5.svg", link: "https://newmare.com/" },
-    { src: "Images/Logos/logo_6.svg", link: "https://www.vortex-net.com/en/" },
-    { src: "Images/Logos/logo_7.svg", link: "https://onedrop-inv.com/" },
-    { src: "Images/Logos/logo_1.svg", link: "https://emiratespadel.com/" }, // Repeat first to fill space
+    { src: "Images/Logos/logo_5.svg", link: "https://www.vortex-net.com/en/" },
+    { src: "Images/Logos/logo_6.svg", link: "https://newmare.com/" },
+    { src: "Images/Logos/logo_7.svg", link: "https://emiratespadel.com/" },
+    { src: "Images/Logos/logo_1.svg", link: "https://sky-adventures.ae/" }, // Repeat first to fill space
 ];
 
 const Impact = () => {
