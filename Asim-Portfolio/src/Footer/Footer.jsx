@@ -29,7 +29,7 @@ const Footer = ({ setActiveNav }) => {
 
             </div>
             <hr />
-            <p>© 2025 ASIM SWATI. All rights reserved.| www.creatorsblueprint.net</p>
+            <p>© {new Date().getFullYear()} ASIM SWATI. All rights reserved.| www.creatorsblueprint.net</p>
 
 
 
