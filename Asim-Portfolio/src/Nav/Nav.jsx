@@ -72,10 +72,12 @@ const Nav = ({ activeNav, setActiveNav, containerRef }) => {
                                 <i class="ri-meteor-line"></i>
                                 <a href="#Impact" onClick={() => setActiveNav('Impact')} >Impact</a>
                             </li>
+                            {/*
                             <li className={activeNav === 'Product' ? styles.active : ''}>
                                 <i class="ri-shopping-cart-2-line"></i>
                                 <a href="#Product" onClick={() => setActiveNav('Product')} >Product</a>
                             </li>
+                            */}
                             <li className={activeNav === 'Gallery' ? styles.active : ''}>
                                 <i class="ri-multi-image-line"></i>
                                 <a href="#Gallery" onClick={() => setActiveNav('Gallery')} >Gallery</a>
@@ -125,10 +127,12 @@ const Nav = ({ activeNav, setActiveNav, containerRef }) => {
                                     <i class="ri-meteor-line"></i>
                                     <a href="#Impact" onClick={() => { setActiveNav('Impact'); setHamMenu(false); }} >Impact</a>
                                 </li>
+                                {/*
                                 <li>
                                     <i class="ri-shopping-cart-2-line"></i>
                                     <a href="#Product" onClick={() => { setActiveNav('Product'); setHamMenu(false); }} >Product</a>
                                 </li>
+                                */}
                                 <li>
                                     <i class="ri-multi-image-line"></i>
                                     <a href="#Gallery" onClick={() => { setActiveNav('Gallery'); setHamMenu(false); }} >Gallery</a>
