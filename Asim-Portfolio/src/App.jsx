@@ -47,10 +47,7 @@ function App() {
           <Impact />
 
         </div>
-        <div className={activeNav === 'Product' ? 'active' : 'product'}>
-          <Product />
 
-        </div>
         <div className={activeNav === 'Gallery' ? 'active' : 'gallery'}>
           <Gallery />
 
