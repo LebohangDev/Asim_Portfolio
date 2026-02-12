@@ -157,7 +157,7 @@ const Nav = ({ activeNav, setActiveNav, containerRef }) => {
 
                             <div className={styles.copyright}>
                                 <p>
-                                    © 2025 CreatorsBlueprint. All rights reserved. | www.creatorsblueprint.com
+                                    © {new Date().getFullYear()} Asim Swati. All rights reserved.
                                 </p>
                             </div>
                         </motion.div>
