@@ -15,20 +15,22 @@ const Gallery = () => {
 
 
     const [imageWidth, setImageWidth] = useState(300);
+    const [visibleImages, setVisibleImages] = useState(1);
 
     useEffect(() => {
         const updateWidth = () => {
-            if (window.innerWidth <= 480) {
-
+            if (window.innerWidth < 768) {
                 setImageWidth(270);
-            } else if (window.innerWidth <= 768) {
-
+                setVisibleImages(1);
+            } else if (window.innerWidth < 1024) {
                 setImageWidth(270);
-            } else if (window.innerWidth <= 1024) {
-
+                setVisibleImages(2);
+            } else if (window.innerWidth < 1440) {
                 setImageWidth(270);
+                setVisibleImages(3);
             } else {
                 setImageWidth(300);
+                setVisibleImages(4);
             }
         };
 
@@ -39,14 +41,21 @@ const Gallery = () => {
         return () => window.removeEventListener('resize', updateWidth);
     }, []);
 
-    useEffect(() => {
+    const nextImage = () => {
+        setCurrentIndex((prevIndex) => {
+            const maxIndex = images.length - visibleImages;
+            if (prevIndex >= maxIndex) return 0; // Loop back to start
+            return prevIndex + 1;
+        });
+    };
 
-        const timer = setInterval(() => {
-            setCurrentIndex(c => (c + 1) % images.length);
-        }, 5000);
-
-        return () => clearInterval(timer);
-    }, []);
+    const prevImage = () => {
+        setCurrentIndex((prevIndex) => {
+            const maxIndex = images.length - visibleImages;
+            if (prevIndex <= 0) return maxIndex; // Loop to end
+            return prevIndex - 1;
+        });
+    };
 
 
 
@@ -71,19 +80,30 @@ const Gallery = () => {
                 variants={fadeInUp}
             >
 
-                <motion.div
-                    className={styles.ImagesContainer}
+                <div className={styles.navigationWrapper}>
+                    <button className={`${styles.navButton} ${styles.prevButton}`} onClick={prevImage} aria-label="Previous Image">
+                        <i className="ri-arrow-left-s-line"></i>
+                    </button>
 
-                    animate={{ x: -currentIndex * (imageWidth + 10) }}
-                    transition={{ ease: "easeInOut", duration: 0.5 }}
-                >
-                    {images.map((image, index) => (
-                        <div className={styles.imageCardContainer} onClick={() => setCurrentIndex(index)} key={index}>
-                            <img src={image} alt={`Asim Swati Gallery ${index + 1}`} loading="lazy" decoding="async" />
-                        </div>
+                    <div className={styles.galleryWindow}>
+                        <motion.div
+                            className={styles.ImagesContainer}
+                            animate={{ x: -currentIndex * (imageWidth + 32) }}
+                            transition={{ ease: "easeInOut", duration: 0.5 }}
+                        >
+                            {images.map((image, index) => (
+                                <div className={styles.imageCardContainer} onClick={() => setCurrentIndex(index)} key={index}>
+                                    <img src={image} alt={`Asim Swati Gallery ${index + 1}`} loading="lazy" decoding="async" />
+                                </div>
 
-                    ))}
-                </motion.div>
+                            ))}
+                        </motion.div>
+                    </div>
+
+                    <button className={`${styles.navButton} ${styles.nextButton}`} onClick={nextImage} aria-label="Next Image">
+                        <i className="ri-arrow-right-s-line"></i>
+                    </button>
+                </div>
 
 
                 <div className={styles.dotsContainer}>

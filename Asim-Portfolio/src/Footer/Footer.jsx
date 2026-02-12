@@ -13,15 +13,19 @@ const Footer = ({ setActiveNav }) => {
                     <div className={styles.media}>
                         <p>Media</p>
                         <div className={styles.socialIcons}>
-                            <i className="ri-instagram-line" style={{ color: 'var(--accent-primary)' }}></i>
-                            <i className="ri-linkedin-fill" style={{ color: 'var(--accent-primary)' }}></i>
+                            <a href="https://www.instagram.com/asimswatii/" target="_blank" rel="noopener noreferrer">
+                                <i className="ri-instagram-line" style={{ color: 'var(--accent-primary)' }}></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/asim-swati-141579136/" target="_blank" rel="noopener noreferrer">
+                                <i className="ri-linkedin-fill" style={{ color: 'var(--accent-primary)' }}></i>
+                            </a>
                         </div>
                     </div>
                     <div className={styles.footerNav}>
                         <ul>
                             <li><a href="#Home" onClick={() => setActiveNav('Home')}>Home</a></li>
                             <li><a href="#Impact" onClick={() => setActiveNav('Impact')}>Impact</a></li>
-                            <li><a href="#Product" onClick={() => setActiveNav('Product')}>Product</a></li>
+                            {/* <li><a href="#Product" onClick={() => setActiveNav('Product')}>Product</a></li> */}
                             <li><a href="#Gallery" onClick={() => setActiveNav('Gallery')}>Gallery</a></li>
                         </ul>
                     </div>
@@ -29,7 +33,7 @@ const Footer = ({ setActiveNav }) => {
 
             </div>
             <hr />
-            <p>© {new Date().getFullYear()} ASIM SWATI. All rights reserved.| www.creatorsblueprint.net</p>
+            <p>© {new Date().getFullYear()} ASIM SWATI. All rights reserved.</p>
 
 
 

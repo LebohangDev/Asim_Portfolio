@@ -68,6 +68,11 @@
     align-items: center;
 }
 
+.socialIcons a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .socialIcons i {
     font-size: 1.4rem;
     color: #FFFFFF;

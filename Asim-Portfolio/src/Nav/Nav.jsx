@@ -146,8 +146,12 @@ const Nav = ({ activeNav, setActiveNav, containerRef }) => {
                                 </h1>
 
                                 <div className={styles.socials}>
-                                    <i className="ri-instagram-line" style={{ color: 'var(--accent-primary)' }}></i>
-                                    <i className="ri-linkedin-fill" style={{ color: 'var(--accent-primary)' }}></i>
+                                    <a href="https://www.instagram.com/asimswatii/" target="_blank" rel="noopener noreferrer">
+                                        <i className="ri-instagram-line" style={{ color: 'var(--accent-primary)' }}></i>
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/asim-swati-141579136/" target="_blank" rel="noopener noreferrer">
+                                        <i className="ri-linkedin-fill" style={{ color: 'var(--accent-primary)' }}></i>
+                                    </a>
                                 </div>
                             </div>
 

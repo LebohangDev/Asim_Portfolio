@@ -21,6 +21,13 @@ const Home = () => {
                         <h1>Opportunities move quiickly in <span>Dubai.</span></h1>
                         <p><span>Running fast</span> is not enough</p>
                         <p>you need to run in the <span>right direction</span></p>
+
+                        <div className={styles.ctaContainer}>
+                            <p>If you are looking to start a business through @quiickwork, Click Me</p>
+                            <a href="https://quiickwork.com" target="_blank" rel="noopener noreferrer" className={styles.ctaButton}>
+                                Start Your Business with Quiickwork
+                            </a>
+                        </div>
                     </motion.div>
                     <motion.div
                         className={styles.signature}

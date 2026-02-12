@@ -225,7 +225,12 @@
         display: flex;
         gap: 0.2rem;
         justify-items: center;
+    }
 
+    /* Target the anchor tag to remove underline */
+    .hamMenuActive .media .socials a {
+        text-decoration: none;
+        color: inherit;
     }
 
     .hamMenuActive .media .socials i {

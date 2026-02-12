@@ -38,8 +38,16 @@
     flex-direction: column;
     align-items: center;
     justify-items: center;
-    overflow: hidden;
+    /* overflow: hidden; removed to allow nav buttons to stay visible if parent clips */
     gap: 2rem;
+}
+
+.galleryWindow {
+    overflow: hidden;
+    width: 320px;
+    /* Default width for mobile/small screens (imageWidth + padding) */
+    max-width: 100%;
+    margin: 0 10px;
 }
 
 
@@ -53,7 +61,7 @@
 
 
     align-items: center;
-    gap: 2rem;
+    gap: 32px;
 
 
 }
@@ -69,14 +77,24 @@
 
 
 .ActivitiesContainer .ImagesContainer .imageCardContainer img {
-    width: 20rem;
-
+    width: 270px;
+    /* Match JS mobile/tablet width */
+    height: 350px;
+    /* Increased height to maintain aspect ratio roughly or fixed */
+    /* Previous was 25rem ~ 360-400px. Let's stick to a reasonable fixed height or keep rem if height doesn't matter for drift. width matters. */
     height: 25rem;
 
     border-radius: 12px;
     overflow-x: hidden;
     object-fit: cover;
     pointer-events: none;
+}
+
+@media (min-width: 1440px) {
+    .ActivitiesContainer .ImagesContainer .imageCardContainer img {
+        width: 300px;
+        /* Match JS desktop width */
+    }
 }
 
 
@@ -118,5 +136,103 @@
 @media (min-width: 768px) and (max-width: 1280px) and (orientation: portrait) {
     .galleryContainer {
         max-width: 90%;
+    }
+
+    .galleryContainer {
+        max-width: 90%;
+    }
+}
+
+/* Navigation Styles */
+.navigationWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+    position: relative;
+}
+
+.navButton {
+
+    color: var(--accent-primary);
+    border: 1px solid var(--accent-primary);
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.5rem;
+    z-index: 10;
+}
+
+.navButton:hover {
+    background-color: var(--accent-primary);
+    color: #000;
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .navButton {
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1.2rem;
+    }
+
+    .navigationWrapper {
+        gap: 0.5rem;
+    }
+}
+
+/* Responsive Window Widths
+   Calculation: (ImageWidth * N) + (Gap * (N-1))
+   Mobile ImageWidth: 270px
+   Desktop ImageWidth: 300px
+   Gap: 32px
+*/
+
+/* Mobile (Default): 1 Image */
+/* Width = 270px */
+.galleryWindow {
+    overflow: hidden;
+    width: 270px;
+    max-width: 100%;
+    margin: 0 auto;
+    /* Enhance centering */
+}
+
+/* Tablet: 2 Images */
+/* 270*2 + 32 = 572px */
+@media (min-width: 768px) {
+    .galleryWindow {
+        width: 572px;
+    }
+
+    .galleryContainer {
+        max-width: 95%;
+        /* Allow full width */
+    }
+}
+
+/* Laptop: 3 Images */
+/* 270*3 + 64 = 810 + 64 = 874px */
+@media (min-width: 1024px) {
+    .galleryWindow {
+        width: 874px;
+    }
+}
+
+/* Desktop: 4 Images */
+/* 300*4 + 96 = 1200 + 96 = 1296px */
+@media (min-width: 1440px) {
+    .galleryWindow {
+        width: 1296px;
+    }
+
+    .galleryContainer {
+        max-width: 1500px;
     }
 }

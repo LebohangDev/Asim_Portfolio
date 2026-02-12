@@ -55,6 +55,12 @@ const Impact = () => {
                     <motion.p className={styles.description} variants={fadeInUp}>
                         Dubai rewards the people who understand how it works. For the past 5+ years, I’ve helped founders, creators, and global brands <span>do exactly that.</span>
                     </motion.p>
+                    <motion.div className={styles.ctaContainer} variants={fadeInUp}>
+                        <p>Start Your Business Today!</p>
+                        <a href="https://quiickwork.com" target="_blank" rel="noopener noreferrer" className={styles.ctaButton}>
+                            Start Your Business with Quiickwork
+                        </a>
+                    </motion.div>
                 </motion.div>
 
                 <div className={styles.contentGrid}>
