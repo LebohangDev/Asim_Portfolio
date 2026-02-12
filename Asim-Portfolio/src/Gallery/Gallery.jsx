@@ -93,7 +93,13 @@ const Gallery = () => {
                         >
                             {images.map((image, index) => (
                                 <div className={styles.imageCardContainer} onClick={() => setCurrentIndex(index)} key={index}>
-                                    <img src={image} alt={`Asim Swati Gallery ${index + 1}`} loading="lazy" decoding="async" />
+                                    <img
+                                        src={image}
+                                        alt={`Asim Swati Gallery ${index + 1}`}
+                                        loading={index < 4 ? "eager" : "lazy"}
+                                        decoding={index < 4 ? "auto" : "async"}
+                                        fetchPriority={index < 4 ? "high" : "auto"}
+                                    />
                                 </div>
 
                             ))}
