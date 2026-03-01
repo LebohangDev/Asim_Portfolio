@@ -37,8 +37,8 @@ const Product = () => {
         title: "Asim Swati Business Masterclass",
         amount: 399,
         currency: "USD",
-        successUrl: "https://lebohangdev.github.io/Asim_Portfolio/?payment=success",
-        cancelUrl: "https://lebohangdev.github.io/Asim_Portfolio/?payment=cancel",
+        successUrl: "https://asimswati.com/?payment=success",
+        cancelUrl: "https://asimswati.com/?payment=cancel",
 
 
     };
@@ -68,7 +68,7 @@ const Product = () => {
 
             }
 
-            const res = await fetch('https://asim-portfolio-backend.onrender.com/api/create-payment-intent', {
+            const res = await fetch('https://asim-portfolio-backend-648711352735.me-west1.run.app/api/create-payment-intent', {
                 method: 'POST',
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(productPayload),
